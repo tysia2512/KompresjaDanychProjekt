@@ -173,11 +173,28 @@ public:
         letter_codes = tree.getCodes();
     }
 
-    CODE encode(DATA& data) const {
-        // TODO
+    boost::tuple<CODE, int> encode(DATA& data) const {
+        int length = 0;
+        CODE code = "";
+        while (data) {
+            LETTER l = "";
+            for (int i = 0; i < k; i++) {
+                if (data) {
+                    l += char(data.get());
+                } else {
+                    break;
+                }
+            }
+            if (l.size() == k) {
+                code += letter_codes.find(l)->second;
+                length += k;
+            }
+        }
+        return boost::make_tuple(code, length);
     }
 };
 
 int main() {
     // TODO
+    // kodujemy tylko podzielna czesc przez k
 }
