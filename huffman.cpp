@@ -7,6 +7,9 @@
 
 #include <boost/optional.hpp>
 #include <boost/tuple/tuple.hpp>
+//DEBUG
+#include <boost/tuple/tuple_io.hpp>
+#include <boost/optional/optional_io.hpp>
 
 // #include <fstream>
 
@@ -19,9 +22,10 @@ typedef std::vector<DISTR_SAMPLE> DISTRIBUTION;
 class HuffmanNode {
 private:
     LETTER letter;
-    boost::optional<const HuffmanNode&> child0, child1;
+    const boost::optional<const HuffmanNode&> child0, child1;
 
     void getCodes(std::unordered_map<LETTER, CODE> &codes, const CODE &prefix) const {
+        // std::cout << (bool)child0 << " " << (bool)child1 << "\n";
         if (child0 && child1) {
             child0->getCodes(codes, prefix + "0");
             child1->getCodes(codes, prefix + "1");
@@ -32,9 +36,11 @@ private:
 
 public:
     HuffmanNode() {}
-    HuffmanNode(const LETTER &letter) : letter(letter) {}
+    HuffmanNode(const LETTER &letter) 
+    : letter(letter) ,child0(boost::none), child1(boost::none) 
+    { std::cout << (bool)child0 <<" " << (bool)child1 << "\n"; }
     HuffmanNode(const HuffmanNode &child0, const HuffmanNode &child1)
-    : child0(child0), child1{child1} {}
+    : child0(child0), child1(child1) {}
 
     std::unordered_map<LETTER, CODE> getCodes() const {
         std::unordered_map<LETTER, CODE> codes;
@@ -109,11 +115,17 @@ public:
         while(data) {
             letter += char(data.get());
             letter.erase(0, 1);
+            // DEBUG
+            // std::cout << letter << "\n";
             freq[letter]++;
         }
         for(std::unordered_map<LETTER,int>::iterator it = freq.begin(); it != freq.end(); ++it) {
             distr.push_back(boost::make_tuple(it->first, it->second));
         }
+        // DEBUG
+        // for (const auto &d : distr) {
+        //     std::cout << d << "\n";
+        // }
     }
 };
 
@@ -144,16 +156,14 @@ public:
 
 class HuffmanCodes {
 private:
-    HuffmanNode tree;
+    const HuffmanNode tree;
     std::unordered_map<LETTER, CODE> letter_codes;
     const int k;
     const bool combine_letters;
 
-public:
-    HuffmanCodes(DATA& data, int k, bool cl) 
-    : k(k), combine_letters(cl) {
+    static const HuffmanNode buildTree (DATA& data, int k, bool cl) {
         Distribution d;
-        if (combine_letters) {
+        if (cl) {
             d = CombinedLettersDistribution(data, k);
         } else {
             d = Distribution(data, k);
@@ -164,7 +174,8 @@ public:
         // TODO: komparator chyba w zla strone
         std::priority_queue<HuffmanQueuedTree> q;
         for (const DISTR_SAMPLE &l : d.get_distribution()) {
-            q.push(HuffmanQueuedTree(l, time));
+            HuffmanQueuedTree leaf(l, time);
+            q.push(leaf);
         }
         // TODO: co jesli zaczynamy od jednego wierzcholka
         while (q.size() > 1) {
@@ -174,9 +185,17 @@ public:
             HuffmanQueuedTree t2 = q.top();
             q.pop();
             q.push(HuffmanQueuedTree::merge(t1, t2, time));
+            // DEBUG
+            // std::cout << q.size() << "\n";
         }
-        tree = q.top().getTree();
+        return q.top().getTree();
+    }
+
+public:
+    HuffmanCodes(DATA& data, int k, bool cl) 
+    : k(k), combine_letters(cl), tree(buildTree(data, k, cl)) {
         letter_codes = tree.getCodes();
+        std::cout << "codes done\n";
     }
 
     boost::tuple<CODE, int> encode(DATA& data) const {

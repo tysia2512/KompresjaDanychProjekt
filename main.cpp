@@ -15,8 +15,10 @@ int main() {
                 
                 std::ifstream data;
                 data.open(file);
+                // std::cout << "File " << file << " opened for " << k << " " << cmb << "\n";
                 HuffmanCodes h(data, k, cmb);
                 data.close();
+                // std::cout << "codes done\n";
                 data.open(file);
                 boost::tuple<CODE, int> encoded = h.encode(data);
                 std::cout << encoded.get<0>().length() << " " << encoded.get<1>() << "\n";
