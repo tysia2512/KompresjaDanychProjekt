@@ -193,8 +193,3 @@ public:
         return boost::make_tuple(code, length);
     }
 };
-
-int main() {
-    // TODO
-    // kodujemy tylko podzielna czesc przez k
-}
