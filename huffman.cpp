@@ -1,11 +1,14 @@
+// #include "huffman.h"
 #include <iostream>
 #include <vector>
 #include <queue>
 #include <unordered_map>
 #include <algorithm>
+
 #include <boost/optional.hpp>
 #include <boost/tuple/tuple.hpp>
-// #include <boost/tuple/tuple_io.hpp>
+
+// #include <fstream>
 
 typedef std::string LETTER;
 typedef std::string CODE;
@@ -16,7 +19,7 @@ typedef std::vector<DISTR_SAMPLE> DISTRIBUTION;
 class HuffmanNode {
 private:
     LETTER letter;
-    boost::optional<HuffmanNode&> child0, child1;
+    boost::optional<const HuffmanNode&> child0, child1;
 
     void getCodes(std::unordered_map<LETTER, CODE> &codes, const CODE &prefix) const {
         if (child0 && child1) {
@@ -28,9 +31,10 @@ private:
     }
 
 public:
-    HuffmanNode();
-    HuffmanNode(const LETTER &letter);
-    HuffmanNode(const HuffmanNode &child0, const HuffmanNode &child1);
+    HuffmanNode() {}
+    HuffmanNode(const LETTER &letter) : letter(letter) {}
+    HuffmanNode(const HuffmanNode &child0, const HuffmanNode &child1)
+    : child0(child0), child1{child1} {}
 
     std::unordered_map<LETTER, CODE> getCodes() const {
         std::unordered_map<LETTER, CODE> codes;
@@ -55,7 +59,8 @@ public:
     HuffmanQueuedTree(
         const HuffmanNode &tree, 
         const int frequency, 
-        const int time_created);
+        const int time_created)
+        : tree(tree), frequency(frequency), time_created(time_created) {}
 
     bool operator <(const HuffmanQueuedTree &hqt) const {
 		return frequency < hqt.frequency 
@@ -75,9 +80,10 @@ public:
         const HuffmanQueuedTree &t2, 
         int time) {
 
-        HuffmanNode tree = HuffmanNode(t1.tree, t2.tree);
+        HuffmanNode tree(t1.tree, t2.tree);
 
-        return HuffmanQueuedTree(tree, t1.frequency + t2.frequency, time);
+        HuffmanQueuedTree res(tree, t1.frequency + t2.frequency, time);
+        return res;
     }
 };
 
@@ -89,7 +95,7 @@ public:
         return distr;
     }
     
-    Distribution();
+    Distribution() {}
     // O(k*n) - erase chyba jest liniowe
     Distribution(DATA &data, int k) {
         std::unordered_map<LETTER, int> freq;
@@ -144,8 +150,8 @@ private:
     const bool combine_letters;
 
 public:
-    HuffmanCodes(DATA& data, int k, bool combine_letters) 
-    : k(k), combine_letters(combine_letters) {
+    HuffmanCodes(DATA& data, int k, bool cl) 
+    : k(k), combine_letters(cl) {
         Distribution d;
         if (combine_letters) {
             d = CombinedLettersDistribution(data, k);
@@ -193,3 +199,28 @@ public:
         return boost::make_tuple(code, length);
     }
 };
+
+// const std::vector<std::string> filenames{"text1"};
+// const std::vector<int> ks{1, 2, 3, 4, 5, 6, 7};
+// const std::vector<bool> combined{false, true};
+
+// int main() {
+//     for (const std::string &file : filenames) {
+//         for (const int &k : ks) {
+//             for (const bool &cmb : combined) {
+//                 if (k == 1 && cmb == true) {
+//                     continue;
+//                 }
+                
+//                 std::ifstream data;
+//                 data.open(file);
+//                 HuffmanCodes h(data, k, cmb);
+//                 data.close();
+//                 data.open(file);
+//                 boost::tuple<CODE, int> encoded = h.encode(data);
+//                 std::cout << encoded.get<0>().length() << " " << encoded.get<1>() << "\n";
+//                 data.close();
+//             }
+//         }
+//     }
+// }

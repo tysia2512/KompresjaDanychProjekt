@@ -1,4 +1,4 @@
-#include "huffman.h"
+#include "huffman.cpp"
 #include <fstream>
 
 const std::vector<std::string> filenames{"text1"};
