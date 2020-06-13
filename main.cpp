@@ -9,7 +9,11 @@ struct Test {
     Test(const std::string& fn, int maxk) : filename(fn), maxk(maxk) {}
 };
 
-const std::vector<Test> tests{Test("text1", 2), Test("text2", 4)};
+const std::vector<Test> tests{
+    Test("text1", 2), 
+    Test("text2", 4),
+    Test("strona1", 2),
+    Test("download.jpeg", 3)};
 
 int main() {
     for (const Test &test : tests) {
