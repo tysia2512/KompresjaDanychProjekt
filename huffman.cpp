@@ -151,6 +151,7 @@ private:
             HuffmanQueuedTree leaf(l, time);
             q.push(leaf);
         }
+        std::cout << "Alphabet size: " << q.size() << "\n";
         // TODO: co jesli zaczynamy od jednego wierzcholka
         while (q.size() > 1) {
             time++;

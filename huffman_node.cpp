@@ -15,6 +15,7 @@ private:
 
     void getCodes(std::unordered_map<LETTER, CODE> &codes, const CODE &prefix) const {
         // Zawsze jest dwoje lub 0 dzieci
+        // std::cout << prefix.size() << "\n";
         if (child0 != NULL && child1 != NULL) {
             child0->getCodes(codes, prefix + "0");
             child1->getCodes(codes, prefix + "1");
