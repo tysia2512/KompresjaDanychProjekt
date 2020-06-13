@@ -2,7 +2,7 @@
 #include <fstream>
 
 const std::vector<std::string> filenames{"text1"};
-const std::vector<int> ks{1, 2, 3, 4, 5, 6, 7};
+const std::vector<int> ks{1, 2};
 const std::vector<bool> combined{false, true};
 
 int main() {

@@ -17,8 +17,6 @@ private:
         if (node != NULL) {
             destroyNode(node->child0);
             destroyNode(node->child1);
-        }
-        else {
             delete node;
         }
     }
@@ -36,8 +34,6 @@ public:
     HuffmanNode() {}
     HuffmanNode(const LETTER &letter) 
     : letter(letter) ,child0(nullptr), child1(nullptr) {}
-    HuffmanNode(HuffmanNode &child0, HuffmanNode &child1)
-    : child0(&child0), child1(&child1), letter(boost::none) {}
     HuffmanNode(HuffmanNode *child0, HuffmanNode *child1) 
     : child0(child0), child1(child1), letter(boost::none) {}
 
