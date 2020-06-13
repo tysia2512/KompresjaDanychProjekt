@@ -22,7 +22,7 @@ typedef std::vector<DISTR_SAMPLE> DISTRIBUTION;
 class HuffmanNode {
 private:
     LETTER letter;
-    const boost::optional<const HuffmanNode&> child0, child1;
+    boost::optional<const HuffmanNode&> child0, child1;
 
     void getCodes(std::unordered_map<LETTER, CODE> &codes, const CODE &prefix) const {
         // std::cout << (bool)child0 << " " << (bool)child1 << "\n";
