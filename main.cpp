@@ -9,20 +9,23 @@ int main() {
     for (const std::string &file : filenames) {
         for (const int &k : ks) {
             for (const bool &cmb : combined) {
+                std::cout << file << " " << k << " " << cmb << "\n";
                 if (k == 1 && cmb == true) {
                     continue;
                 }
                 
+                std::ifstream dataCodes;
+                dataCodes.open(file);
+                HuffmanCodes hc(dataCodes, k, cmb);
+                // hc.debugCodes();
+                dataCodes.close();
+
                 std::ifstream data;
                 data.open(file);
-                // std::cout << "File " << file << " opened for " << k << " " << cmb << "\n";
-                HuffmanCodes h(data, k, cmb);
-                data.close();
-                // std::cout << "codes done\n";
-                data.open(file);
-                boost::tuple<CODE, int> encoded = h.encode(data);
+                boost::tuple<CODE, int> encoded = hc.encode(data);
                 std::cout << encoded.get<0>().length() << " " << encoded.get<1>() << "\n";
                 data.close();
+                std::cout << "data closed\n";
             }
         }
     }

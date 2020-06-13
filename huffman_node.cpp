@@ -18,9 +18,10 @@ private:
             destroyNode(node->child0);
             destroyNode(node->child1);
         }
-        delete node;
+        else {
+            delete node;
+        }
     }
-
 
     void getCodes(std::unordered_map<LETTER, CODE> &codes, const CODE &prefix) const {
         // Zawsze jest dwoje lub 0 dzieci
