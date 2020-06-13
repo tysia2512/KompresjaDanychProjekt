@@ -173,7 +173,7 @@ public:
         std::cout << "codes done\n";
     }
     ~HuffmanCodes() {
-        delete tree;
+        HuffmanNode::destroyNode(tree);
     }
 
     boost::tuple<CODE, int> encode(DATA& data) const {

@@ -13,14 +13,6 @@ private:
     const boost::optional<LETTER> letter;
     HuffmanNode *child0, *child1;
 
-    void destroyNode(HuffmanNode* node) {
-        if (node != NULL) {
-            destroyNode(node->child0);
-            destroyNode(node->child1);
-            delete node;
-        }
-    }
-
     void getCodes(std::unordered_map<LETTER, CODE> &codes, const CODE &prefix) const {
         // Zawsze jest dwoje lub 0 dzieci
         if (child0 != NULL && child1 != NULL) {
@@ -37,9 +29,21 @@ public:
     HuffmanNode(HuffmanNode *child0, HuffmanNode *child1) 
     : child0(child0), child1(child1), letter(boost::none) {}
 
-    ~HuffmanNode() {
-        destroyNode(this);
+    static void destroyNode(HuffmanNode* node) {
+        if (node != NULL) {
+            destroyNode(node->child0);
+            destroyNode(node->child1);
+            // std::cout << node << "\n";
+            delete node;
+        }
     }
+
+    // ~HuffmanNode() {
+    //     if (this != NULL) {
+    //         destroyNode(child0);
+    //         destroyNode(child1);
+    //     }
+    // }
 
     std::unordered_map<LETTER, CODE> getCodes() const {
         std::unordered_map<LETTER, CODE> codes;
