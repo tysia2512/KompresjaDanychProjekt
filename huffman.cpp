@@ -2,17 +2,10 @@
 
 #include <vector>
 #include <queue>
-#include <algorithm>
 
-#include <boost/optional.hpp>
 #include <boost/tuple/tuple.hpp>
 #include <boost/tuple/tuple_io.hpp>
-#include <boost/optional/optional_io.hpp>
 
-// #include <fstream>
-
-// typedef std::string LETTER;
-// typedef std::string CODE;
 typedef std::istream DATA;
 typedef boost::tuple<LETTER, int> DISTR_SAMPLE;
 typedef std::vector<DISTR_SAMPLE> DISTRIBUTION;
@@ -58,11 +51,6 @@ public:
 
         return HuffmanQueuedTree(tree, t1.frequency + t2.frequency, time);
     }
-
-    void debug() {
-        // std::cout << frequency << " " << time_created << "\n";
-        // tree->debug();
-    }
 };
 
 class Distribution {
@@ -74,7 +62,6 @@ public:
     }
     
     Distribution() {}
-    // O(k*n) - erase chyba jest liniowe
     Distribution(DATA &data, int k) {
         std::unordered_map<LETTER, int> freq;
         LETTER letter = "";
@@ -87,21 +74,14 @@ public:
         while(data) {
             letter += char(data.get());
             letter.erase(0, 1);
-            // DEBUG
-            // std::cout << letter << "\n";
             freq[letter]++;
         }
         for(std::unordered_map<LETTER,int>::iterator it = freq.begin(); it != freq.end(); ++it) {
             distr.push_back(boost::make_tuple(it->first, it->second));
         }
-        // DEBUG
-        // for (const auto &d : distr) {
-        //     std::cout << d << "\n";
-        // }
     }
 };
 
-// O(A^k)
 class CombinedLettersDistribution : public Distribution {
 private:
     void gen_samples(
@@ -124,7 +104,6 @@ private:
 public:
     CombinedLettersDistribution(DATA &data, int k) {
         Distribution simple_distr = Distribution(data, 1);
-        std::cout << "gen combined samples for " << k << "\n";
         gen_samples(simple_distr.get_distribution(), 1, "", k);
     }
 };
@@ -145,23 +124,18 @@ private:
         }
 
         int time = 0;
-        // TODO: komparator chyba w zla strone
         std::priority_queue<HuffmanQueuedTree> q;
         for (const DISTR_SAMPLE &l : d.get_distribution()) {
             HuffmanQueuedTree leaf(l, time);
             q.push(leaf);
         }
-        std::cout << "Alphabet size: " << q.size() << "\n";
-        // TODO: co jesli zaczynamy od jednego wierzcholka
         while (q.size() > 1) {
             time++;
             HuffmanQueuedTree t1 = q.top();
             q.pop();
             HuffmanQueuedTree t2 = q.top();
             q.pop();
-            t1.debug(); t2.debug();
             q.push(HuffmanQueuedTree::merge(t1, t2, time));
-            // std::cout << q.size() << "\n";
         }
         return q.top().getTree();
     }
@@ -169,9 +143,7 @@ private:
 public:
     HuffmanCodes(DATA& data, int k, bool cl) 
     : k(k), combine_letters(cl), tree(buildTree(data, k, cl)) {
-        std::cout << "Creating HC with k: " << k << ", cl: " << cl << "\n";
         letter_codes = tree->getCodes();
-        std::cout << "codes done\n";
     }
     ~HuffmanCodes() {
         HuffmanNode::destroyNode(tree);
@@ -195,14 +167,6 @@ public:
             }
         }
         return boost::make_tuple(code, length * letter_codes.size());
-    }
-
-    void debugCodes() {
-        auto it = letter_codes.begin();
-        while(it != letter_codes.end()) {
-            std::cout<<it->first << " :: "<<it->second<<std::endl;
-            it++;
-        }
     }
 };
 

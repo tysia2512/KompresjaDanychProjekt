@@ -3,7 +3,6 @@
 #include <unordered_map>
 
 #include <boost/optional.hpp>
-#include <boost/optional/optional_io.hpp>
 
 typedef std::string LETTER;
 typedef std::string CODE;
@@ -14,8 +13,6 @@ private:
     HuffmanNode *child0, *child1;
 
     void getCodes(std::unordered_map<LETTER, CODE> &codes, const CODE &prefix) const {
-        // Zawsze jest dwoje lub 0 dzieci
-        // std::cout << prefix.size() << "\n";
         if (child0 != NULL && child1 != NULL) {
             child0->getCodes(codes, prefix + "0");
             child1->getCodes(codes, prefix + "1");
@@ -34,26 +31,13 @@ public:
         if (node != NULL) {
             destroyNode(node->child0);
             destroyNode(node->child1);
-            // std::cout << node << "\n";
             delete node;
         }
     }
 
-    // ~HuffmanNode() {
-    //     if (this != NULL) {
-    //         destroyNode(child0);
-    //         destroyNode(child1);
-    //     }
-    // }
-
     std::unordered_map<LETTER, CODE> getCodes() const {
         std::unordered_map<LETTER, CODE> codes;
         getCodes(codes, "");
-        std::cout << "codes done\n";
         return codes;
-    }
-
-    void debug() {
-        std::cout << "TREE: " << child0 << " " << child1 << " " << letter << "\n";
     }
 };

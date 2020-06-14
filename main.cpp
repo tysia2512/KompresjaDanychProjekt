@@ -32,7 +32,6 @@ int main() {
                 std::ifstream data;
                 data.open(file);
                 boost::tuple<CODE, int> encoded = hc.encode(data);
-                std::cout << encoded.get<0>().length() << " " << encoded.get<1>() << "\n";
                 data.close();
             }
         }
