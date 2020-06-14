@@ -2,12 +2,13 @@
 
 #include <vector>
 #include <queue>
+#include <cmath>
 
 #include <boost/tuple/tuple.hpp>
 #include <boost/tuple/tuple_io.hpp>
 
 typedef std::istream DATA;
-typedef boost::tuple<LETTER, int> DISTR_SAMPLE;
+typedef boost::tuple<LETTER, long long> DISTR_SAMPLE;
 typedef std::vector<DISTR_SAMPLE> DISTRIBUTION;
 
 class HuffmanQueuedTree {
@@ -63,21 +64,33 @@ public:
     
     Distribution() {}
     Distribution(DATA &data, int k) {
-        std::unordered_map<LETTER, int> freq;
+        std::unordered_map<LETTER, long long> freq;
         LETTER letter = "";
         for (int i = 0; i < k; i++) {
-            if (data) {
+            if (!data.eof()) {
                 letter += char(data.get());
             }
         }
         freq[letter]++;
-        while(data) {
+        while(!data.eof()) {
             letter += char(data.get());
             letter.erase(0, 1);
             freq[letter]++;
         }
-        for(std::unordered_map<LETTER,int>::iterator it = freq.begin(); it != freq.end(); ++it) {
+        long long max_freq = 0;
+        for(std::unordered_map<LETTER, long long>::iterator it = freq.begin(); it != freq.end(); it++) {
             distr.push_back(boost::make_tuple(it->first, it->second));
+            if (it->second > max_freq)
+                max_freq = it->second;
+        }
+        std::cout << distr.size() << " letters in simple distribution\n";
+        std::cout << "Most often appearing letter appeared " << max_freq << " times\n";
+    }
+
+    void debug() {
+        std::cout << "DISTRIBUTION DEBUG\n";
+        for (int i = 0; i < distr.size(); i++) {
+            std::cout << distr[i].get<0>() << " " << distr[i].get<1>() << "\n";
         }
     }
 };
@@ -86,10 +99,11 @@ class CombinedLettersDistribution : public Distribution {
 private:
     void gen_samples(
         const DISTRIBUTION &basic_distr, 
-        // TODO: moga byc potrzebne jakies bignumy
         long long freq,
         LETTER l, 
         int k) {
+        if (freq <= 0)
+            std::cout << "PODEJRZANE!: " << l << " " << freq << "\n";
         if (k == 0) {
             distr.push_back(boost::make_tuple(l, freq));
             return;
@@ -97,14 +111,16 @@ private:
         for (int i = 0; i < basic_distr.size(); i++) {
             gen_samples(
                 basic_distr, 
-                freq *= basic_distr[i].get<1>(), 
+                freq * basic_distr[i].get<1>(), 
                 l + basic_distr[i].get<0>(), k-1);
         }
     }
 public:
     CombinedLettersDistribution(DATA &data, int k) {
         Distribution simple_distr = Distribution(data, 1);
+        std::cout << "Combining " << simple_distr.get_distribution().size() << " letters\n";
         gen_samples(simple_distr.get_distribution(), 1, "", k);
+        std::cout << "Resulted in " << distr.size() << " letters\n";
     }
 };
 
@@ -149,24 +165,31 @@ public:
         HuffmanNode::destroyNode(tree);
     }
 
-    boost::tuple<CODE, int> encode(DATA& data) const {
-        int length = 0;
+    boost::tuple<CODE, long long> encode(DATA& data) const {
+        long long length = 0;
         CODE code = "";
-        while (data) {
+        while (!data.eof()) {
             LETTER l = "";
             for (int i = 0; i < k; i++) {
-                if (data) {
+                if (!data.eof()) {
                     l += char(data.get());
                 } else {
                     break;
                 }
             }
             if (l.size() == k) {
+                if (letter_codes.find(l) == letter_codes.end()) {
+                    std::cout << "Letter " << l << " not found\n";
+                    std::cout << (int)l[0] << "\n";
+                    return boost::make_tuple("", 0);
+                }
                 code += letter_codes.find(l)->second;
                 length += k;
             }
         }
-        return boost::make_tuple(code, length * letter_codes.size());
+        std::cout << "Letter codes' number: " << letter_codes.size() << "\n";
+        double estimated_length = length * log2(letter_codes.size());
+        return boost::make_tuple(code, (long long)estimated_length);
     }
 };
 
