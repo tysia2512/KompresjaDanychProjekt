@@ -57,9 +57,14 @@ public:
 class Distribution {
 protected:
     DISTRIBUTION distr;
+    std::unordered_map<LETTER, long long> singleton_frequency;
 public:
-    DISTRIBUTION get_distribution() const {
+    DISTRIBUTION getDistribution() const {
         return distr;
+    }
+
+    std::unordered_map<LETTER, long long> getFrequency() const {
+        return singleton_frequency;
     }
     
     Distribution() {}
@@ -69,11 +74,13 @@ public:
         for (int i = 0; i < k; i++) {
             if (!data.eof()) {
                 letter += char(data.get());
+                singleton_frequency["" + letter[letter.size() - 1]]++;
             }
         }
         freq[letter]++;
         while(!data.eof()) {
             letter += char(data.get());
+            singleton_frequency["" + letter[letter.size() - 1]]++;
             letter.erase(0, 1);
             freq[letter]++;
         }
@@ -83,8 +90,6 @@ public:
             if (it->second > max_freq)
                 max_freq = it->second;
         }
-        std::cout << distr.size() << " letters in simple distribution\n";
-        std::cout << "Most often appearing letter appeared " << max_freq << " times\n";
     }
 
     void debug() {
@@ -97,30 +102,44 @@ public:
 
 class CombinedLettersDistribution : public Distribution {
 private:
-    void gen_samples(
+    void gen(
         const DISTRIBUTION &basic_distr, 
         long long freq,
         LETTER l, 
         int k) {
-        if (freq <= 0)
-            std::cout << "PODEJRZANE!: " << l << " " << freq << "\n";
         if (k == 0) {
             distr.push_back(boost::make_tuple(l, freq));
             return;
         }
         for (int i = 0; i < basic_distr.size(); i++) {
-            gen_samples(
+            gen(
                 basic_distr, 
                 freq * basic_distr[i].get<1>(), 
                 l + basic_distr[i].get<0>(), k-1);
         }
     }
+
+    void genExistingOnly(const Distribution& existing) {
+        std::unordered_map<LETTER, long long> frequencies = 
+            existing.getFrequency();
+        for (const DISTR_SAMPLE &letter : 
+            existing.getDistribution()) {
+            long long freq = 1;
+            for (int i = 0; i < letter.get<0>().size(); i++) {
+                freq *= frequencies["" + letter.get<0>()[i]];
+            }
+            distr.push_back(boost::make_tuple(letter.get<0>(), freq));
+        }
+    }
 public:
-    CombinedLettersDistribution(DATA &data, int k) {
-        Distribution simple_distr = Distribution(data, 1);
-        std::cout << "Combining " << simple_distr.get_distribution().size() << " letters\n";
-        gen_samples(simple_distr.get_distribution(), 1, "", k);
-        std::cout << "Resulted in " << distr.size() << " letters\n";
+    CombinedLettersDistribution(DATA &data, int k, bool only_existing = false) {
+        if (only_existing) {
+            Distribution d = Distribution(data, k);
+            genExistingOnly(d);
+        } else {
+            Distribution d = Distribution(data, 1);
+            gen(d.getDistribution(), 1, "", k);
+        }
     }
 };
 
@@ -130,18 +149,19 @@ private:
     std::unordered_map<LETTER, CODE> letter_codes;
     const int k;
     const bool combine_letters;
+    const bool existing_only;
 
-    static HuffmanNode* buildTree (DATA& data, int k, bool cl) {
+    static HuffmanNode* buildTree (DATA& data, int k, bool cl, bool eo) {
         Distribution d;
         if (cl) {
-            d = CombinedLettersDistribution(data, k);
+            d = CombinedLettersDistribution(data, k, eo);
         } else {
             d = Distribution(data, k);
         }
 
         int time = 0;
         std::priority_queue<HuffmanQueuedTree> q;
-        for (const DISTR_SAMPLE &l : d.get_distribution()) {
+        for (const DISTR_SAMPLE &l : d.getDistribution()) {
             HuffmanQueuedTree leaf(l, time);
             q.push(leaf);
         }
@@ -157,8 +177,11 @@ private:
     }
 
 public:
-    HuffmanCodes(DATA& data, int k, bool cl) 
-    : k(k), combine_letters(cl), tree(buildTree(data, k, cl)) {
+    HuffmanCodes(DATA& data, int k, bool cl, bool existing_only = false) 
+    : k(k), 
+    combine_letters(cl), 
+    tree(buildTree(data, k, cl, existing_only)), 
+    existing_only(existing_only) {
         letter_codes = tree->getCodes();
     }
     ~HuffmanCodes() {
@@ -178,16 +201,11 @@ public:
                 }
             }
             if (l.size() == k) {
-                if (letter_codes.find(l) == letter_codes.end()) {
-                    std::cout << "Letter " << l << " not found\n";
-                    std::cout << (int)l[0] << "\n";
-                    return boost::make_tuple("", 0);
-                }
                 code += letter_codes.find(l)->second;
                 length += k;
             }
         }
-        std::cout << "Letter codes' number: " << letter_codes.size() << "\n";
+        std::cout << "Liczba kodów liter: " << letter_codes.size() << "\n";
         double estimated_length = length * log2(letter_codes.size());
         return boost::make_tuple(code, (long long)estimated_length);
     }
