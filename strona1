@@ -1,0 +1,2244 @@
+
+<!DOCTYPE html>
+<html  dir="ltr" lang="pl" xml:lang="pl">
+<head>
+    <title>Kokpit</title>
+    <link rel="shortcut icon" href="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/theme/1570042091/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, Kokpit" />
+<link rel="stylesheet" type="text/css" href="https://skos.ii.uni.wroc.pl/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://skos.ii.uni.wroc.pl/theme/styles.php/elegance/1570042091_1569167444/all" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/skos.ii.uni.wroc.pl","sesskey":"HrffLMbrWL","themerev":"1570042091","slasharguments":1,"theme":"elegance","iconsystemmodule":"core\/icon_system_standard","jsrev":"1570042091","admin":"admin","svgicons":true,"usertimezone":"Europa \/ Warszawa","contextid":3472};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/skos.ii.uni.wroc.pl\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/skos.ii.uni.wroc.pl\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/skos.ii.uni.wroc.pl\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/skos.ii.uni.wroc.pl\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/skos.ii.uni.wroc.pl\/theme\/yui_combo.php?m\/1570042091\/","combine":true,"comboBase":"https:\/\/skos.ii.uni.wroc.pl\/theme\/yui_combo.php?","ext":false,"root":"m\/1570042091\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader","moodle-core-event"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_dialogue-userpreference":{"requires":["base","node","json-parse","userpreference","userpreference-filters","userpreference-highlighters","event","event-key"]},"moodle-mod_dialogue-clickredirector":{"requires":["base","node","json-parse","clickredirector","clickredirector-filters","clickredirector-highlighters","event","event-key"]},"moodle-mod_dialogue-autocomplete":{"requires":["base","node","json-parse","autocomplete","autocomplete-filters","autocomplete-highlighters","event","event-key"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_fullscreen-button":{"requires":["event-resize","moodle-editor_atto-plugin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_htmlplus-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_htmlplus-beautify","moodle-atto_htmlplus-codemirror","event-valuechange"]},"moodle-atto_htmlplus-beautify":{},"moodle-atto_htmlplus-codemirror":{"requires":["moodle-atto_htmlplus-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/skos.ii.uni.wroc.pl\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/skos.ii.uni.wroc.pl\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1570042091\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/skos.ii.uni.wroc.pl\/lib\/javascript.php\/1570042091\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/skos.ii.uni.wroc.pl\/lib\/javascript.php\/1570042091\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.2\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body  id="page-my-index" class="format-site  path-my chrome dir-ltr lang-pl yui-skin-sam yui3-skin-sam skos-ii-uni-wroc-pl pagelayout-mydashboard course-1 context-3472 has-region-content used-region-content has-region-side-post used-region-side-post layout-option-langmenu">
+
+<div class="skiplinks">
+    <a href="#maincontent" class="skip">Przejdź do głównej zawartości</a>
+</div><script type="text/javascript" src="https://skos.ii.uni.wroc.pl/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script type="text/javascript" src="https://skos.ii.uni.wroc.pl/theme/jquery.php/core/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://skos.ii.uni.wroc.pl/theme/jquery.php/theme_elegance/fitvids-1.1.0.js"></script>
+<script type="text/javascript" src="https://skos.ii.uni.wroc.pl/theme/jquery.php/theme_elegance/eventswipe_0.5.js"></script>
+<script type="text/javascript" src="https://skos.ii.uni.wroc.pl/theme/jquery.php/theme_elegance/nprogress.js"></script>
+<script type="text/javascript" src="https://skos.ii.uni.wroc.pl/theme/jquery.php/theme_elegance/backstretch_2.0.6.js"></script>
+<script type="text/javascript" src="https://skos.ii.uni.wroc.pl/theme/jquery.php/theme_elegance/elegance.js"></script>
+<script type="text/javascript" src="https://skos.ii.uni.wroc.pl/lib/javascript.php/1570042091/lib/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+<div id="page-content-wrapper">
+    <nav role="navigation" class="navbar navbar-default eboxshadow">
+
+    <div class="container-fluid">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand" href="https://skos.ii.uni.wroc.pl"><div id="logo"></div></a>
+        </div>
+
+        <div class="navbar-header pull-right">
+            <ul class="nav navbar-nav hidden-xs hidden-sm">
+            <div class="pull-right popover-region collapsed">
+    <a id="message-drawer-toggle-5ee4e2700f1a65ee4e26fe995426" class="nav-link d-inline-block popover-region-toggle position-relative message-drawer-toggle" href="#"
+            role="button">
+	<i class="glyphicon glyphicon-inbox"></i>
+        <div class="count-container hidden" data-region="count-container"
+        aria-label="Masz 0 nieprzeczytanych rozmów">0</div>
+    </a>
+</div>
+            </ul>
+            
+            <div class="usermenu"><div class="moodle-actionmenu nowrap-items" id="action-menu-0" data-enhance="moodle-core-actionmenu">
+
+        <ul class="menubar" id="action-menu-0-menubar" role="menubar">
+
+            <!--
+
+            --><!--
+
+            --><li role="presentation"><a href="#" class=" toggle-display textmenu" id="action-menu-toggle-0" title="Menu użytkownika" role="menuitem"><span class="userbutton"><span class="usertext mr-1">Martyna Siejba</span><span class="avatars"><span class="avatar current"><img src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/u/f2" class="userpicture defaultuserpic" width="35" height="35" role="presentation" aria-hidden="true" /></span></span></span><b class="caret"></b></a>
+</li>
+
+        </ul>
+
+
+        <ul class="menu  align-tr-br" id="action-menu-0-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-0" role="menu" data-align="tr-br">
+            <li role="presentation">    <a href="https://skos.ii.uni.wroc.pl/my/" class="icon menu-action" role="menuitem" data-title="mymoodle,admin" aria-labelledby="actionmenuaction-1"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/dashboard" /><span class="menu-action-text" id="actionmenuaction-1">Kokpit</span></a>
+
+
+
+
+
+</li><li role="presentation">
+<span class="filler">&nbsp;</span>
+
+
+
+</li><li role="presentation">    <a href="https://skos.ii.uni.wroc.pl/user/profile.php?id=320" class="icon menu-action" role="menuitem" data-title="profile,moodle" aria-labelledby="actionmenuaction-2"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/user" /><span class="menu-action-text" id="actionmenuaction-2">Profil</span></a>
+
+
+
+
+
+</li><li role="presentation">    <a href="https://skos.ii.uni.wroc.pl/grade/report/overview/index.php" class="icon menu-action" role="menuitem" data-title="grades,grades" aria-labelledby="actionmenuaction-3"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/grades" /><span class="menu-action-text" id="actionmenuaction-3">Stopnie</span></a>
+
+
+
+
+
+</li><li role="presentation">    <a href="https://skos.ii.uni.wroc.pl/user/preferences.php" class="icon menu-action" role="menuitem" data-title="preferences,moodle" aria-labelledby="actionmenuaction-4"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/preferences" /><span class="menu-action-text" id="actionmenuaction-4">Preferencje</span></a>
+
+
+
+
+
+</li><li role="presentation">
+<span class="filler">&nbsp;</span>
+
+
+
+</li><li role="presentation">    <a href="https://skos.ii.uni.wroc.pl/login/logout.php?sesskey=HrffLMbrWL" class="icon menu-action" role="menuitem" data-title="logout,moodle" aria-labelledby="actionmenuaction-5"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/a/logout" /><span class="menu-action-text" id="actionmenuaction-5">Wyloguj</span></a>
+
+
+
+
+
+</li>
+        </ul>
+</div></div>
+            
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav pull-right">
+            <li class="dropdown langmenu"><a href="#cm_submenu_1" class="dropdown-toggle" data-toggle="dropdown" title="Język">Polski ‎(pl)‎<b class="caret"></b></a><ul class="dropdown-menu"><li><a title="English ‎(en)‎" href="https://skos.ii.uni.wroc.pl/my/index.php?lang=en">English ‎(en)‎</a></li><li><a title="Polski ‎(pl)‎" href="https://skos.ii.uni.wroc.pl/my/index.php?lang=pl">Polski ‎(pl)‎</a></li></ul>
+            </ul>
+            
+            <ul class="nav pull-right">
+                <li></li>
+            </ul>
+            
+        </div>
+    </div>
+
+</nav>
+    
+    
+    
+    <div class="container-fluid">
+                <header id="moodleheader" class="clearfix">
+            <div id="course-header" class="p-l-15 p-r-15 p-b-10 p-t-10">
+                <h1>Martyna Siejba</h1>                                <span class="notifications" id="user-notifications"></span>            </div>
+        </header>
+        
+    </div>
+
+    <div id="page-navbar" >
+    <div class="container-fluid">
+        <div class="breadcrumbcontainer  m-t-5">
+            <nav class="breadcrumb-nav elegancewidth" role="navigation" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                        <li class=><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://skos.ii.uni.wroc.pl/my/"><span itemprop="title">Kokpit</span></a></span></li>
+                        <li class=><span tabindex="0">Moje kursy</span></li>
+                        <li class=active><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" aria-current="page" href="https://skos.ii.uni.wroc.pl/my/"><span itemprop="title">Więcej...</span></a></span></li>
+                </ol>
+            </nav>
+            <div class="breadcrumb-button m-0"><div class="singlebutton"><form method="post" action="https://skos.ii.uni.wroc.pl/my/index.php"><div><input type="submit" value="Edytuj tę stronę" /><input type="hidden" name="edit" value="1" /><input type="hidden" name="sesskey" value="HrffLMbrWL" /></div></form></div></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+    <div class="container-fluid">
+    <section id="page" >
+        <div id="page-content" class="row">
+            <div id="region-main" class="col-sm-9">
+                <div class="eboxshadow elegance-bg-white p-20">
+                <span class="notifications" id="user-notifications"></span><div role="main"><span id="maincontent"></span><aside id="block-region-content" class="block-region" data-blockregion="content" data-droptarget="1"><a class="skip skip-block" id="fsb-10" href="#sb-10">Pomiń Ostatnio przeglądane kursy</a><div id="inst8736" class="block_recentlyaccessedcourses block hidden" role="complementary" data-block="recentlyaccessedcourses" data-instanceid="8736" aria-labelledby="instance-8736-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-8736-header">Ostatnio przeglądane kursy</h2><hr class="star-primary" /></div></div><div class="content"><div id="block-recentlyaccessedcourses-5ee4e2700c2f85ee4e26fe995414" class="block-recentlyaccessedcourses block-cards" data-region="recentlyaccessedcourses"
+     data-userid="320">
+    <div class="container-fluid p-0">
+        <div id="recentlyaccessedcourses-view-5ee4e2700c2f85ee4e26fe995414"
+             data-region="recentlyaccessedcourses-view"
+             data-nocoursesimgurl="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/block_recentlyaccessedcourses/1570042091/courses">
+            <div data-region="recentlyaccessedcourses-view-content">
+                <div data-region="recentlyaccessedcourses-loading-placeholder">
+                    <div class="card-deck dashboard-card-deck one-row" style="height: 11.1rem">
+                        <div class="card dashboard-card border-0">
+                            <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+                            </div>
+                            <div class="card-body pr-1 course-info-container">
+                                <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card border-0">
+                            <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+                            </div>
+                            <div class="card-body pr-1 course-info-container">
+                                <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card border-0">
+                            <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+                            </div>
+                            <div class="card-body pr-1 course-info-container">
+                                <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card border-0">
+                            <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+                            </div>
+                            <div class="card-body pr-1 course-info-container">
+                                <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    </div>
+</div></div></div><span class="skip-block-to" id="sb-10"></span><a class="skip skip-block" id="fsb-11" href="#sb-11">Pomiń Przegląd kursów</a><div id="inst3133" class="block_myoverview block" role="complementary" data-block="myoverview" data-instanceid="3133" aria-labelledby="instance-3133-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-3133-header">Przegląd kursów</h2><hr class="star-primary" /></div></div><div class="content"><div id="block-myoverview-5ee4e2700c7a75ee4e26fe995415" class="block-myoverview block-cards" data-region="myoverview" role="navigation">
+
+            <div data-region="filter" class="d-flex align-items-center flex-wrap" aria-label="Sterowanie przeglądem kursu">
+                <div class="dropdown m-b-1 mr-auto">
+                    <button id="groupingdropdown" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Grupowanie listy rozwijanej">
+                        <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/filter" />
+                        <span class="d-sm-inline-block" data-active-item-text>
+                            Wszystkie
+                            
+                            
+                            
+                            
+                            
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu" data-show-active-item data-active-item-text aria-labelledby="groupingdropdown">
+                        <li>
+                            <a class="dropdown-item active" href="#" data-filter="grouping" data-value="all" data-pref="all" aria-label="Wszystkie kursy" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                                Wszystkie
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#" data-filter="grouping" data-value="inprogress" data-pref="inprogress" aria-label="Pokaż na kursach w toku" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                                Aktualne
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#" data-filter="grouping" data-value="future" data-pref="future" aria-label="Pokaż przyszłe kursy" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                                Nadchodzące
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#" data-filter="grouping" data-value="past" data-pref="past" aria-label="Pokaż wcześniejsze kursy" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                                Zakończone
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#" data-filter="grouping" data-value="favourites"  data-pref="favourites" aria-label="Pokaż kursy oznaczone gwiazdką" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                                Oznaczone gwiazdką
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#" data-filter="grouping" data-value="hidden"  data-pref="hidden" aria-label="Pokaż ukryte kursy" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                                Ukryte
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="m-b-1 mr-1 d-flex align-items-center">
+                    <div class="d-none d-md-inline-block mr-1">Sortuj według</div>
+                    <div class="dropdown">
+                        <button id="sortingdropdown" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" aria-label="Sortowanie listy rozwijanej">
+                            <span data-active-item-text>
+                                Nazwa kursu
+                                
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu" data-show-active-item aria-labelledby="sortingdropdown">
+                            <li>
+                                <a class="dropdown-item active" href="#" data-filter="sort" data-pref="title" data-value="fullname" aria-label="Sortuj kursy według nazw" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                                    Nazwa kursu
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item " href="#" data-filter="sort" data-pref="lastaccessed" data-value="ul.timeaccess desc" aria-label="Sortuj kursy według daty ostatniego dostępu" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                                    Ostatnio przeglądane
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown m-b-1">
+                    <button id="displaydropdown" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    aria-label="Wyświetl listę rozwijaną">
+                        <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/a/view_icon_active" />
+                        <span class="d-sm-inline-block" data-active-item-text>
+                            Karty
+                            
+                            
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu" data-show-active-item aria-labelledby="displaydropdown">
+                        <li>
+                            <a class="dropdown-item active" href="#" data-display-option="display" data-value="cards" data-pref="cards" aria-label="Przełącz na widok kart" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                            Karty
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#" data-display-option="display" data-value="list" data-pref="list" aria-label="Przejdź do widoku listy" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                            Lista
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#" data-display-option="display" data-value="summary" data-pref="summary" aria-label="Przejdź do widoku podsumowania" aria-controls="courses-view-5ee4e2700c7a75ee4e26fe995415">
+                            Podsumowanie
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+    <div class="container-fluid p-0">
+        <div id="courses-view-5ee4e2700c7a75ee4e26fe995415"
+            data-region="courses-view"
+            data-display="cards"
+            data-grouping="all"
+            data-sort="fullname"
+            data-prev-display="cards"
+            data-paging="12"
+            data-nocoursesimg="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/block_myoverview/1570042091/courses">
+            <div data-region="course-view-content">
+                <div data-region="loading-placeholder-content" aria-hidden="true">
+                    <div class="card-deck dashboard-card-deck one-row" style="height: 13rem">
+                        <div class="card dashboard-card border-0">
+                            <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+                            </div>
+                            <div class="card-body course-info-container">
+                                <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card border-0">
+                            <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+                            </div>
+                            <div class="card-body course-info-container">
+                                <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card border-0">
+                            <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+                            </div>
+                            <div class="card-body course-info-container">
+                                <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card border-0">
+                            <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+                            </div>
+                            <div class="card-body course-info-container">
+                                <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    </div>
+</div></div></div><span class="skip-block-to" id="sb-11"></span></aside></div>                </div>
+            </div>
+
+                        <aside id="block-region-side-post" class="col-sm-3 block-region" data-blockregion="side-post" data-droptarget="1"><a class="skip skip-block" id="fsb-1" href="#sb-1">Pomiń Moje prywatne pliki</a><div id="inst3127" class="block_private_files block" role="complementary" data-block="private_files" data-instanceid="3127" aria-labelledby="instance-3127-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-3127-header">Moje prywatne pliki</h2><hr class="star-primary" /></div></div><div class="content"><div class="box generalbox">Brak dostępnych plików</div><div class="footer"><a href="https://skos.ii.uni.wroc.pl/user/files.php?returnurl=https%3A%2F%2Fskos.ii.uni.wroc.pl%2Fmy%2Findex.php">Zarządzaj prywatnymi plikami...</a></div></div></div><span class="skip-block-to" id="sb-1"></span><a class="skip skip-block" id="fsb-2" href="#sb-2">Pomiń Oś czasu</a><div id="inst9925" class="block_timeline block" role="complementary" data-block="timeline" data-instanceid="9925" aria-labelledby="instance-9925-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-9925-header">Oś czasu</h2><hr class="star-primary" /></div></div><div class="content"><div id="block-timeline-5ee4e26fe99515ee4e26fe99541" class="block-timeline" data-region="timeline">
+    <div class="container-fluid p-0 pb-3 border-bottom">
+        <div class="row-fluid no-gutters">
+            <div data-region="day-filter" class="btn-group">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        aria-label="Filtruj elementy osi czasu" aria-controls="menudayfilter">
+                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/duration" />
+                    <span class="sr-only" data-active-item-text>
+                        
+                        
+                         Kolejne 7 dni 
+                        
+                        
+                        
+                    </span>
+                    <span data-region="caret" class="caret"></span>
+                </button>
+                <ul id="menudayfilter" role="menu" class="dropdown-menu" data-show-active-item>
+                    <li class="dropdown-item " data-from="-14" data-filtername="all">
+                        <a href="#" aria-label="Opcja filtrowania Wszystkie" role="menuitem" >
+                            Wszystkie
+                        </a>
+                    </li>
+                    <li class="dropdown-item " data-from="-14" data-to="0" data-filtername="overdue">
+                        <a href="#" aria-label="Opcja filtrowania Zaległe" role="menuitem" >
+                            Zaległe
+                        </a>
+                    </li>
+                    <li class="divider" role="separator"></li>
+                    <li class="dropdown-item  active " data-from="0" data-to="7" data-filtername="next7days">
+                        <a href="#" aria-label="Opcja filtrowania Kolejne 7 dni" role="menuitem" aria-current="true">
+                            Kolejne 7 dni
+                        </a>
+                    </li>
+                    <li class="dropdown-item " data-from="0" data-to="30" data-filtername="next30days">
+                        <a href="#" aria-label="Opcja filtrowania Kolejne 30 dni" role="menuitem" >
+                            Kolejne 30 dni
+                        </a>
+                    </li>
+                    <li class="dropdown-item " data-from="0" data-to="90" data-filtername="next3months">
+                        <a href="#" aria-label="Opcja filtrowania Kolejne 3 miesiące" role="menuitem" >
+                            Kolejne 3 miesiące
+                        </a>
+                    </li>
+                    <li class="dropdown-item " data-from="0" data-to="180" data-filtername="next6months">
+                        <a href="#" aria-label="Opcja filtrowania Kolejne 6 miesięcy" role="menuitem" >
+                            Kolejne 6 miesięcy
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-region="view-selector" class="btn-group pull-right">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Sortowanie elementów na osi czasu" aria-controls="menusortby">
+                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/filter" />
+                    <span data-region="caret" class="caret"></span>
+                    <span class="sr-only" data-active-item-text>
+                        
+                        Sortuj wg dat
+                    </span>
+                </button>
+                <ul id="menusortby" role="menu" class="dropdown-menu dropdown-menu-right" data-show-active-item>
+                    <li class="dropdown-item active" data-target="#view_dates_5ee4e26fe99515ee4e26fe99541" data-toggle="tab" data-filtername="sortbydates">
+                        <a href="#" aria-label="Opcja sortowania Sortuj wg dat" role="menuitem" aria-current="true">
+                            Sortuj wg dat
+                        </a>
+                    </li>
+                    <li class="dropdown-item " data-target="#view_courses_5ee4e26fe99515ee4e26fe99541" data-toggle="tab" data-filtername="sortbycourses">
+                        <a href="#" aria-label="Opcja sortowania Sortuj wg kursów" role="menuitem" >
+                            Sortuj wg kursów
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-0">
+        <div data-region="timeline-view">
+            <div class="tab-content" style="overflow: visible">
+                <div class="tab-pane active in fade" data-limit="5" data-region="view-dates" id="view_dates_5ee4e26fe99515ee4e26fe99541">
+                    <div data-region="timeline-view-dates">
+                        <div data-region="event-list-container"
+                             data-days-offset="0"
+                             data-days-limit="7"
+                             data-course-id=""
+                             data-midnight="1591999200"
+                        >
+                            <div data-region="event-list-loading-placeholder">
+                                <ul class="media-list m-t-1">
+                                    <li class="media" style="height: 32px">
+                                        <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                        <div class="media-body">
+                                            <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                            <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                        </div>
+                                    </li>
+                                    <li class="media" style="height: 32px">
+                                        <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                        <div class="media-body">
+                                            <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                            <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                        </div>
+                                    </li>
+                                    <li class="media" style="height: 32px">
+                                        <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                        <div class="media-body">
+                                            <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                            <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                        </div>
+                                    </li>
+                                    <li class="media" style="height: 32px">
+                                        <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                        <div class="media-body">
+                                            <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                            <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                        </div>
+                                    </li>
+                                    <li class="media" style="height: 32px">
+                                        <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                        <div class="media-body">
+                                            <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                            <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="m-t-1">
+                                    <div class="bg-pulse-grey pull-right" style="height: 35px; width: 25%;"></div>
+                                    <div class="bg-pulse-grey" style="height: 35px; width: 25%;"></div>
+                                </div>
+                            </div>
+                            <div data-region="event-list-content"></div>
+                            <div class="hidden text-xs-center text-center mt-3" data-region="empty-message">
+                                <img
+                                    src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/block_timeline/1570042091/activities"
+                                    alt="Brak aktywności z terminem oddania"
+                                    role="presentation"
+                                    style="height: 70px; width: 70px"
+                                >
+                                <p class="text-muted m-t-1">Brak aktywności z terminem oddania</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="tab-pane  fade"
+                    data-region="view-courses"
+                    data-midnight="1591999200"
+                    data-limit="2"
+                    data-offset="0"
+                    data-days-limit="30"
+                    data-days-offset="0"
+                    data-no-events-url="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/block_timeline/1570042091/activities"
+                    id="view_courses_5ee4e26fe99515ee4e26fe99541"
+                >
+                    <div data-region="course-items-loading-placeholder">
+                        <ul class="list-group unstyled">
+                            <li class="m-t-1">
+                                <div class="bg-pulse-grey" style="height: 25px; width: 50%;"></div>
+                                <div class="m-t-1">
+                                    <ul class="media-list">
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="m-t-1">
+                                        <div class="bg-pulse-grey pull-right" style="height: 35px; width: 25%;"></div>
+                                        <div class="bg-pulse-grey" style="height: 35px; width: 25%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="m-t-1">
+                                <div class="bg-pulse-grey" style="height: 25px; width: 50%;"></div>
+                                <div class="m-t-1">
+                                    <ul class="media-list">
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                        <li class="media" style="height: 32px">
+                                            <div class="bg-pulse-grey pull-left" style="height: 32px; width: 32px; border-radius: 50%"></div>
+                                            <div class="media-body">
+                                                <div class="bg-pulse-grey" style="height: 15px;"></div>
+                                                <div class="bg-pulse-grey" style="height: 10px; margin-top: 7px; width: 75%"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="m-t-1">
+                                        <div class="bg-pulse-grey pull-right" style="height: 35px; width: 25%;"></div>
+                                        <div class="bg-pulse-grey" style="height: 35px; width: 25%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="bg-pulse-grey m-t-1" style="width: 100px; height: 30px; margin-left: auto; margin-right: auto"></div>
+                    </div>
+                    <ul class="list-group unstyled" data-region="courses-list"></ul>
+                    <div class="hidden text-xs-center text-center pt-3" data-region="more-courses-button-container">
+                        <button type="button" class="btn btn-secondary" data-action="more-courses">
+                            Więcej kursów
+                            <span class="hidden" data-region="loading-icon-container">
+                                <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="hidden text-xs-center text-center mt-3" data-region="no-courses-empty-message">
+                        <img
+                            src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/block_timeline/1570042091/activities"
+                            alt="Brak aktualnych kursów"
+                            role="presentation"
+                            style="height: 70px; width: 70px"
+                        >
+                        <p class="text-muted m-t-1">Brak aktualnych kursów</p>
+                    </div>
+                </div>
+            </div>
+        </div>    </div>
+</div></div></div><span class="skip-block-to" id="sb-2"></span><a class="skip skip-block" id="fsb-3" href="#sb-3">Pomiń Użytkownicy online</a><div id="inst3128" class="block_online_users block" role="complementary" data-block="online_users" data-instanceid="3128" aria-labelledby="instance-3128-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-3128-header">Użytkownicy online</h2><hr class="star-primary" /></div></div><div class="content"><div class="info">6 użytkowników online (ostatnie 5 minut)</div><ul class='list'>
+<li class="listentry"><div class="user"><a href="https://skos.ii.uni.wroc.pl/user/view.php?id=320&amp;course=1" title="teraz"><img src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/u/f2" class="userpicture defaultuserpic" width="16" height="16" />Martyna Siejba</a></div><div class="uservisibility"><a title="Ukryj mój status online przed innymi użytkownikami" data-action="hide" data-userid="320" id="change-user-visibility" href=""><img class="icon " alt="Ukryj mój status online przed innymi użytkownikami" title="Ukryj mój status online przed innymi użytkownikami" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/hide" /></a></div></li>
+<li class="listentry"><div class="user"><a href="https://skos.ii.uni.wroc.pl/user/view.php?id=1416&amp;course=1" title="2 min. 22 sek."><img src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/u/f2" class="userpicture defaultuserpic" width="16" height="16" />Bartosz Troszka</a></div><div class="message"><a title="Wyślij wiadomość" href="https://skos.ii.uni.wroc.pl/message/index.php?id=1416"><img class="icon " alt="Wyślij wiadomość" title="Wyślij wiadomość" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/message" /></a></div></li>
+<li class="listentry"><div class="user"><a href="https://skos.ii.uni.wroc.pl/user/view.php?id=1727&amp;course=1" title="3 min. 23 sek."><img src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/u/f2" class="userpicture defaultuserpic" width="16" height="16" />Magdalena Rzepka</a></div><div class="message"><a title="Wyślij wiadomość" href="https://skos.ii.uni.wroc.pl/message/index.php?id=1727"><img class="icon " alt="Wyślij wiadomość" title="Wyślij wiadomość" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/message" /></a></div></li>
+<li class="listentry"><div class="user"><a href="https://skos.ii.uni.wroc.pl/user/view.php?id=1689&amp;course=1" title="3 min. 32 sek."><img src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/u/f2" class="userpicture defaultuserpic" width="16" height="16" />Jakub Filipiak</a></div><div class="message"><a title="Wyślij wiadomość" href="https://skos.ii.uni.wroc.pl/message/index.php?id=1689"><img class="icon " alt="Wyślij wiadomość" title="Wyślij wiadomość" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/message" /></a></div></li>
+<li class="listentry"><div class="user"><a href="https://skos.ii.uni.wroc.pl/user/view.php?id=1145&amp;course=1" title="4 min. 47 sek."><img src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/u/f2" class="userpicture defaultuserpic" width="16" height="16" />Jakub Grodzicki</a></div><div class="message"><a title="Wyślij wiadomość" href="https://skos.ii.uni.wroc.pl/message/index.php?id=1145"><img class="icon " alt="Wyślij wiadomość" title="Wyślij wiadomość" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/message" /></a></div></li>
+<li class="listentry"><div class="user"><a href="https://skos.ii.uni.wroc.pl/user/view.php?id=1137&amp;course=1" title="5 min. 5 sek."><img src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/u/f2" class="userpicture defaultuserpic" width="16" height="16" />Mateusz Markiewicz</a></div><div class="message"><a title="Wyślij wiadomość" href="https://skos.ii.uni.wroc.pl/message/index.php?id=1137"><img class="icon " alt="Wyślij wiadomość" title="Wyślij wiadomość" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/message" /></a></div></li>
+</ul><div class="clearer"><!-- --></div></div></div><span class="skip-block-to" id="sb-3"></span><a class="skip skip-block" id="fsb-4" href="#sb-4">Pomiń Ostatnie odznaki</a><div id="inst3129" class="block_badges block" role="complementary" data-block="badges" data-instanceid="3129" aria-labelledby="instance-3129-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-3129-header">Ostatnie odznaki</h2><hr class="star-primary" /></div></div><div class="content">Nie masz odznak do wyświetlenia</div></div><span class="skip-block-to" id="sb-4"></span><a class="skip skip-block" id="fsb-5" href="#sb-5">Pomiń Kalendarz</a><div id="inst3130" class="block_calendar_month block" role="complementary" data-block="calendar_month" data-instanceid="3130" aria-labelledby="instance-3130-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-3130-header">Kalendarz</h2><hr class="star-primary" /></div></div><div class="content"><div id="calendar-month-2020-June-5ee4e26ff0cab5ee4e26fe99542"  data-template="core_calendar/month_mini"  data-includenavigation="true" data-mini="true">
+    <div id="month-mini-2020-June-5ee4e26ff0cab5ee4e26fe99542" class="calendarwrapper" data-courseid="1" data-categoryid="0" data-month="6" data-year="2020" data-view="month">
+        <span class="overlay-icon-container hidden" data-region="overlay-icon-container">
+            <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+        </span>
+        <table class="minicalendar calendartable">
+            <caption class="calendar-controls">
+                    <a href="#" class="arrow_link previous" title="Poprzedni miesiąc" data-year="2020" data-month="5">
+                        <span class="arrow">&#x25C4;</span>
+                    </a>
+                    <span class="hide"> | </span>
+                    <span class="current">
+                        <a href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=month&time=1592058479" title="Ten miesiąc">czerwca 2020</a>
+                    </span>
+                    <span class="hide"> | </span>
+                    <a href="#" class="arrow_link next" title="Następny miesiąc" data-year="2020" data-month="7">
+                        <span class="arrow">&#x25BA;</span>
+                    </a>
+            </caption>
+            <thead>
+              <tr>
+                    <th class="header text-xs-center" scope="col">
+                        <abbr title="Poniedziałek">Pn.</abbr>
+                    </th>
+                    <th class="header text-xs-center" scope="col">
+                        <abbr title="Wtorek">Wt.</abbr>
+                    </th>
+                    <th class="header text-xs-center" scope="col">
+                        <abbr title="Środa">Śr.</abbr>
+                    </th>
+                    <th class="header text-xs-center" scope="col">
+                        <abbr title="Czwartek">Cz.</abbr>
+                    </th>
+                    <th class="header text-xs-center" scope="col">
+                        <abbr title="Piątek">Pi.</abbr>
+                    </th>
+                    <th class="header text-xs-center" scope="col">
+                        <abbr title="Sobota">So.</abbr>
+                    </th>
+                    <th class="header text-xs-center" scope="col">
+                        <abbr title="Niedziela">Ni.</abbr>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1590962400">
+                                1
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1591048800">
+                                2
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1591135200">
+                                3
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1591221600">
+                                4
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1591308000">
+                                5
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1591394400">
+                                6
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1591480800">
+                                7
+                            </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1591567200">
+                                8
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1591653600">
+                                9
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1591740000">
+                                10
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1591826400">
+                                11
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1591912800">
+                                12
+                            </td>
+                        <td class="day text-center today weekend" data-day-timestamp="1591999200">
+                                    <a  href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;time=1591999200" id="calendar-day-popover-link-1-2020-164-5ee4e26ff0cab5ee4e26fe99542" data-container="body" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top" data-title="Dziś sobota, 13 czerwca" data-alternate="Brak wydarzeń">13</a>
+    <div class="hidden">
+        
+    </div>
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1592085600">
+                                14
+                            </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1592172000">
+                                15
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1592258400">
+                                16
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1592344800">
+                                17
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1592431200">
+                                18
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1592517600">
+                                19
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1592604000">
+                                20
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1592690400">
+                                21
+                            </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1592776800">
+                                22
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1592863200">
+                                23
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1592949600">
+                                24
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1593036000">
+                                25
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1593122400">
+                                26
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1593208800">
+                                27
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1593295200">
+                                28
+                            </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1593381600">
+                                29
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1593468000">
+                                30
+                            </td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div></div></div><span class="skip-block-to" id="sb-5"></span><a class="skip skip-block" id="fsb-6" href="#sb-6">Pomiń Nadchodzące wydarzenia</a><div id="inst3131" class="block_calendar_upcoming block" role="complementary" data-block="calendar_upcoming" data-instanceid="3131" aria-labelledby="instance-3131-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-3131-header">Nadchodzące wydarzenia</h2><hr class="star-primary" /></div></div><div class="content"><div id="calendar-upcoming-block-5ee4e2700680d5ee4e26fe99543" data-template="core_calendar/upcoming_mini">
+    <div class="card-text content calendarwrapper" id="month-upcoming-mini-5ee4e2700680d5ee4e26fe99543" data-context-id="2" data-courseid="1" data-categoryid="0">
+        <span class="overlay-icon-container hidden" data-region="overlay-icon-container">
+            <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+        </span>
+            <div class="event" data-eventtype-course="1" data-region="event-item">
+                <span><img class="icon " alt="Wydarzenie związane z aktywnością" title="Wydarzenie związane z aktywnością" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/assign/1570042091/icon" /></span>
+                <a data-type="event" data-action="view-event" data-event-id="2038" href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;course=286&amp;time=1592171940#event_2038">LISTA 8: zgłaszanie wybranych rozwiązań zadań (termin 14.06.2020) (termin oddania)</a>
+                <div class="date"><a href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;time=1592171940">Jutro</a>, 23:59</div>
+                <hr>
+            </div>
+            <div class="event" data-eventtype-course="1" data-region="event-item">
+                <span><img class="icon " alt="Wydarzenie związane z aktywnością" title="Wydarzenie związane z aktywnością" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/choice/1570042091/icon" /></span>
+                <a data-type="event" data-action="view-event" data-event-id="2005" href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;course=29&amp;time=1592431140#event_2005">Wybór terminu prezentacji w sesji letniej 2020 zamyka się</a>
+                <div class="date"><a href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;time=1592431140">środa, 17 czerwca</a>, 23:59</div>
+                <hr>
+            </div>
+            <div class="event" data-eventtype-course="1" data-region="event-item">
+                <span><img class="icon " alt="Wydarzenie związane z aktywnością" title="Wydarzenie związane z aktywnością" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/assign/1570042091/icon" /></span>
+                <a data-type="event" data-action="view-event" data-event-id="2020" href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;course=305&amp;time=1592431140#event_2020">List of exercises no 5 - solutions (termin oddania)</a>
+                <div class="date"><a href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;time=1592431140">środa, 17 czerwca</a>, 23:59</div>
+                <hr>
+            </div>
+            <div class="event" data-eventtype-course="1" data-region="event-item">
+                <span><img class="icon " alt="Wydarzenie związane z aktywnością" title="Wydarzenie związane z aktywnością" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/assign/1570042091/icon" /></span>
+                <a data-type="event" data-action="view-event" data-event-id="2037" href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;course=305&amp;time=1592431140#event_2037">Catch-up list of exercises - solutions (termin oddania)</a>
+                <div class="date"><a href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=day&amp;time=1592431140">środa, 17 czerwca</a>, 23:59</div>
+                <hr>
+            </div>
+    </div>
+</div><div class="footer"><div class="gotocal"><a href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=upcoming">Przejdź do kalendarza...</a></div></div></div></div><span class="skip-block-to" id="sb-6"></span><a class="skip skip-block" id="fsb-7" href="#sb-7">Pomiń Nawigacja</a><div id="inst4" class="block_navigation block" role="navigation" data-block="navigation" data-instanceid="4" aria-labelledby="instance-4-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-4-header">Nawigacja</h2><hr class="star-primary" /></div></div><div class="content"><ul class="block_tree list" role="tree" data-ajax-loader="block_navigation/nav_loader"><li class="type_unknown depth_1 contains_branch" aria-labelledby="label_1_1"><p class="tree_item branch navigation_node" role="treeitem" aria-expanded="true" aria-owns="random5ee4e26fe99544_group" data-collapsible="false"><a tabindex="-1" id="label_1_1" href="https://skos.ii.uni.wroc.pl/my/">Kokpit</a></p><ul id="random5ee4e26fe99544_group" role="group"><li class="type_setting depth_2 item_with_icon" aria-labelledby="label_2_2"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_2_2" href="https://skos.ii.uni.wroc.pl/?redirect=0"><img class="icon navicon" alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/home" /><span class="item-content-wrap">Strona główna</span></a></p></li><li class="type_course depth_2 contains_branch" aria-labelledby="label_2_3"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random5ee4e26fe99546_group"><span tabindex="-1" id="label_2_3" title="System komunikacji na odległość ze studentami IIUWr">Strony</span></p><ul id="random5ee4e26fe99546_group" role="group" aria-hidden="true"><li class="type_unknown depth_3 item_with_icon" aria-labelledby="label_3_5"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_5" href="https://skos.ii.uni.wroc.pl/blog/index.php"><img class="icon navicon" alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/navigationitem" /><span class="item-content-wrap">Blogi strony</span></a></p></li><li class="type_custom depth_3 item_with_icon" aria-labelledby="label_3_6"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_6" href="https://skos.ii.uni.wroc.pl/badges/view.php?type=1"><img class="icon navicon" alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/navigationitem" /><span class="item-content-wrap">Strona odznak</span></a></p></li><li class="type_setting depth_3 item_with_icon" aria-labelledby="label_3_7"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_7" href="https://skos.ii.uni.wroc.pl/tag/search.php"><img class="icon navicon" alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/navigationitem" /><span class="item-content-wrap">Tagi</span></a></p></li><li class="type_custom depth_3 item_with_icon" aria-labelledby="label_3_8"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_8" href="https://skos.ii.uni.wroc.pl/calendar/view.php?view=month"><img class="icon navicon" alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/calendar" /><span class="item-content-wrap">Kalendarz</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_10"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_10" title="Forum" href="https://skos.ii.uni.wroc.pl/mod/forum/view.php?id=5198"><img class="icon navicon" alt="Forum" title="Forum" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/forum/1570042091/icon" /><span class="item-content-wrap">Aktualności</span></a></p></li></ul></li><li class="type_system depth_2 contains_branch" aria-labelledby="label_2_12"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random5ee4e26fe995412_group"><span tabindex="-1" id="label_2_12">Moje kursy</span></p><ul id="random5ee4e26fe995412_group" role="group"><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_13"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_290" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_290" data-node-key="290" data-node-type="20"><a tabindex="-1" id="label_3_13" title="Automated verification 2020" href="https://skos.ii.uni.wroc.pl/course/view.php?id=290">AV20</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_14"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_305" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_305" data-node-key="305" data-node-type="20"><a tabindex="-1" id="label_3_14" title="Deductive Verification 2020" href="https://skos.ii.uni.wroc.pl/course/view.php?id=305">DV2020</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_15"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_286" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_286" data-node-key="286" data-node-type="20"><a tabindex="-1" id="label_3_15" title="Kompresja Danych 2020" href="https://skos.ii.uni.wroc.pl/course/view.php?id=286">KD20</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_16"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_281" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_281" data-node-key="281" data-node-type="20"><a tabindex="-1" id="label_3_16" title="Kryptografia" href="https://skos.ii.uni.wroc.pl/course/view.php?id=281">Kryptografia</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_17"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_278" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_278" data-node-key="278" data-node-type="20"><a tabindex="-1" id="label_3_17" title="Teoretyczne podstawy języków programowania 2020" href="https://skos.ii.uni.wroc.pl/course/view.php?id=278">TPJP 2020</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_18"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_249" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_249" data-node-key="249" data-node-type="20"><a tabindex="-1" id="label_3_18" title="Computational Learning Theory" href="https://skos.ii.uni.wroc.pl/course/view.php?id=249">COLT</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_19"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_197" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_197" data-node-key="197" data-node-type="20"><a tabindex="-1" id="label_3_19" title="Advanced Distributed Algorithms" href="https://skos.ii.uni.wroc.pl/course/view.php?id=197">ADA</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_20"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_201" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_201" data-node-key="201" data-node-type="20"><a tabindex="-1" id="label_3_20" title="Języki formalne i złożoność obliczeniowa 2019" href="https://skos.ii.uni.wroc.pl/course/view.php?id=201">JFiZO2019</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_21"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_176" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_176" data-node-key="176" data-node-type="20"><a tabindex="-1" id="label_3_21" title="Obliczenia i wnioskowanie w systemie Coq 2019" href="https://skos.ii.uni.wroc.pl/course/view.php?id=176">Coq19</a></p></li><li class="type_course depth_3 contains_branch" aria-labelledby="label_3_22"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_137" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_137" data-node-key="137" data-node-type="20"><a tabindex="-1" id="label_3_22" title="Konstrukcja kompilatorów 2018" href="https://skos.ii.uni.wroc.pl/course/view.php?id=137">Kompilatory 18</a></p></li><li class="type_custom depth_3 item_with_icon current_branch" aria-labelledby="label_3_24"><p class="tree_item hasicon active_tree_node" role="treeitem"><a tabindex="-1" id="label_3_24" href="https://skos.ii.uni.wroc.pl/my/"><img class="icon navicon" alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/navigationitem" /><span class="item-content-wrap">Więcej...</span></a></p></li></ul></li></ul></li></ul></div></div><span class="skip-block-to" id="sb-7"></span></aside>        </div>
+    </section>
+    </div>
+</div>
+
+<div
+    id="message-drawer-5ee4e2700fe425ee4e26fe995434"
+    class="message-drawer bg-light hidden"
+    aria-expanded="false"
+    aria-hidden="true"
+    data-region="message-drawer"
+    role="region"
+>
+    <div class="drawer-top border-bottom bg-secondary text-right">
+        <div class="p-2">
+            <a id="message-drawer-close-5ee4e2700fe425ee4e26fe995434" href="#">
+                <img class="icon " alt="Przełącz menu wiadomości" title="Przełącz menu wiadomości" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/window_close" />
+            </a>
+        </div>
+    </div>
+    <div class="header-container position-relative" data-region="header-container">
+        <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-contacts">
+            <div class="d-flex align-items-center">
+                <div class="align-self-stretch">
+                    <a class="h-100 d-flex align-items-center mr-2" href="#" data-route-back role="button">
+                        <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed_rtl" /></span>
+                        <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed" /></span>                    </a>
+                </div>
+                <div>
+                    Kontakty
+                </div>
+                <div class="ml-auto">
+                    <a href="#" data-route="view-search" role="button" aria-label="Szukaj">
+                        <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/a/search" />
+                    </a>
+                </div>
+            </div>
+        </div>        
+        <div
+            class="hidden bg-white position-relative border-bottom px-2 py-2"
+            aria-hidden="true"
+            data-region="view-conversation"
+        >
+            <div class="hidden" data-region="header-content"></div>
+            <div class="hidden" data-region="header-edit-mode">
+                
+                <div class="d-flex p-2 align-items-center">
+                    Wybrane wiadomości:
+                    <span class="ml-1" data-region="message-selected-court">1</span>
+                    <button type="button" class="ml-auto close" aria-label="Anuluj wybór wiadomości"
+                        data-action="cancel-edit-mode">
+                            <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div data-region="header-placeholder">
+                <div class="d-flex">
+                    <div class="align-self-stretch" >
+                        <a class="h-100 mr-2 d-flex align-items-center" href="#" data-route-back role="button">
+                            <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed_rtl" /></span>
+                            <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed" /></span>                        </a>
+                    </div>
+                    <div
+                        class="ml-2 rounded-circle bg-pulse-grey align-self-center"
+                        style="height: 38px; width: 38px"
+                    >
+                    </div>
+                    <div class="ml-2 " style="flex: 1">
+                        <div
+                            class="mt-1 bg-pulse-grey w-75"
+                            style="height: 16px;"
+                        >
+                        </div>
+                    </div>
+                    <div
+                        class="ml-2 bg-pulse-grey align-self-center"
+                        style="height: 16px; width: 20px"
+                    >
+                    </div>
+                </div>
+            </div>
+            <div
+                class="hidden position-absolute"
+                data-region="confirm-dialogue-container"
+                style="top: 0; bottom: -1px; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+            ></div>
+        </div>        <div class="border-bottom px-2 py-3" aria-hidden="false" data-region="view-overview">
+            <div class="d-flex align-items-center">
+                <div class="input-prepend d-flex flex-grow m-0">
+                    <span class="add-on bg-white pr-0">
+                        <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/a/search" />
+                    </span>
+                    <input
+                        type="text"
+                        class="form-control border-left-0 searchinput"
+                        placeholder="Szukaj"
+                        aria-label="Szukaj"
+                        data-region="view-overview-search-input"
+                    >
+                </div>
+                <div class="ml-2">
+                    <a
+                        href="#"
+                        data-route="view-settings"
+                        data-route-param="320"
+                        aria-label="Ustawienia"
+                        role="button"
+                    >
+                        <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/edit" />
+                    </a>
+                </div>
+            </div>
+            <div class="text-right mt-3">
+                <a href="#" data-route="view-contacts" role="button">
+                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/user" />
+                    Kontakty
+                    <span class="badge bg-primary ml-2 hidden"
+                    data-region="contact-request-count"
+                    aria-label="Istnieją 0 oczekujące prośby o kontakt">
+                        0
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hidden border-bottom px-2 py-3 view-search" aria-hidden="true" data-region="view-search">
+            <div class="d-flex align-items-center">
+                <a
+                    class="mr-2 align-self-stretch d-flex align-items-center"
+                    href="#"
+                    data-route-back
+                    data-action="cancel-search"
+                    role="button"
+                >
+                    <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed_rtl" /></span>
+                    <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed" /></span>                </a>
+                <div class="input-append m-0 d-flex flex-grow">
+                    <input
+                        type="text"
+                        class="form-control border-right-0 searchinput"
+                        placeholder="Szukaj"
+                        aria-label="Szukaj"
+                        data-region="search-input"
+                    >
+                    <button
+                        class="btn m-0"
+                        type="button"
+                        data-action="search"
+                        aria-label="Szukaj"
+                    >
+                        <span data-region="search-icon-container">
+                            <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/a/search" />
+                        </span>
+                        <span class="hidden" data-region="loading-icon-container">
+                            <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>        
+        <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-settings">
+            <div class="d-flex align-items-center">
+                <div class="align-self-stretch" >
+                    <a class="h-100 d-flex mr-2 align-items-center" href="#" data-route-back role="button">
+                        <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed_rtl" /></span>
+                        <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed" /></span>                    </a>
+                </div>
+                <div>
+                    Ustawienia
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-container position-relative" data-region="body-container">
+        
+        <div
+            class="hidden"
+            data-region="view-contact"
+            aria-hidden="true"
+        >
+            <div class="p-2 pt-3" data-region="content-container"></div>
+        </div>        <div class="hidden h-100" aria-hidden="true" data-region="view-contacts" data-user-id="320">
+            <div class="d-flex flex-column h-100">
+                <div class="p-3 border-bottom">
+                    <ul class="nav nav-pills d-flex m-0" role="tablist">
+                        <li class="nav-item w-50 align-self-stretch text-center active">
+                            <a
+                                id="contacts-tab-5ee4e2700fe425ee4e26fe995434"
+                                class="nav-link"
+                                href="#contacts-tab-panel-5ee4e2700fe425ee4e26fe995434"
+                                data-toggle="tab"
+                                data-action="show-contacts-section"
+                                role="tab"
+                                aria-controls="contacts-tab-panel-5ee4e2700fe425ee4e26fe995434"
+                                aria-selected="true"
+                            >
+                                Kontakty
+                            </a>
+                        </li>
+                        <li class="nav-item w-50 text-center">
+                            <a
+                                id="requests-tab-5ee4e2700fe425ee4e26fe995434"
+                                class="nav-link"
+                                href="#requests-tab-panel-5ee4e2700fe425ee4e26fe995434"
+                                data-toggle="tab"
+                                data-action="show-requests-section"
+                                role="tab"
+                                aria-controls="requests-tab-panel-5ee4e2700fe425ee4e26fe995434"
+                                aria-selected="false"
+                            >
+                                Prośby
+                                <span class="badge bg-primary ml-2 hidden"
+                                data-region="contact-request-count"
+                                aria-label="Istnieją 0 oczekujące prośby o kontakt">
+                                    0
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content d-flex flex-column h-100">
+                            <div
+            class="tab-pane fade in active h-100"
+            style="overflow-y: auto"
+            aria-live="polite"
+            data-region="lazy-load-list"
+            data-user-id="320"
+                                id="contacts-tab-panel-5ee4e2700fe425ee4e26fe995434"
+                    data-section="contacts"
+                    role="tabpanel"
+                    aria-labelledby="contacts-tab-5ee4e2700fe425ee4e26fe995434"
+
+        >
+            <div class="onepix">
+            </div>
+            
+            <div class="hidden text-center p-2" data-region="empty-message-container">
+                Brak kontaktów
+            </div>
+            <div class="hidden list-group" data-region="content-container">
+                
+            </div>
+            <div class="list-group" data-region="placeholder-container">
+                
+            </div>
+            <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+            </div>
+        </div>
+        
+                            <div
+            class="tab-pane fade h-100"
+            style="overflow-y: auto"
+            aria-live="polite"
+            data-region="lazy-load-list"
+            data-user-id="320"
+                                id="requests-tab-panel-5ee4e2700fe425ee4e26fe995434"
+                    data-section="requests"
+                    role="tabpanel"
+                    aria-labelledby="requests-tab-5ee4e2700fe425ee4e26fe995434"
+
+        >
+            <div class="onepix">
+            </div>
+            
+            <div class="hidden text-center p-2" data-region="empty-message-container">
+                Brak próśb o kontakt
+            </div>
+            <div class="hidden list-group" data-region="content-container">
+                
+            </div>
+            <div class="list-group" data-region="placeholder-container">
+                
+            </div>
+            <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>        
+        <div
+            class="view-conversation hidden h-100"
+            aria-hidden="true"
+            data-region="view-conversation"
+            data-user-id="320"
+            data-midnight="1591999200"
+            data-message-poll-min="10"
+            data-message-poll-max="120"
+            data-message-poll-after-max="300"
+            style="overflow-y: auto; overflow-x: hidden"
+        >
+            <div class="position-relative h-100" data-region="content-container" style="overflow-y: auto; overflow-x: hidden">
+                <div class="content-message-container hidden h-100 px-2 pt-0" data-region="content-message-container" role="log" style="overflow-y: auto; overflow-x: hidden">
+                    <div class="py-3 bg-light sticky-top z-index-1 border-bottom text-center hidden" data-region="contact-request-sent-message-container">
+                        <p class="m-0">Wysłano prośbę o kontakt</p>
+                        <p class="font-italic font-weight-light" data-region="text"></p>
+                    </div>
+                    <div class="hidden text-center p-3" data-region="more-messages-loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</div>
+                </div>
+                <div class="p-4 w-100 h-100 hidden position-absolute" data-region="confirm-dialogue-container" style="top: 0; background: rgba(0,0,0,0.3);">
+                    
+                    <div class="p-3 bg-white" data-region="confirm-dialogue" role="alert">
+                        <h3 class="h6 hidden" data-region="dialogue-header"></h3>
+                        <p class="text-muted" data-region="dialogue-text"></p>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-block">
+                            <span data-region="dialogue-button-text">Blok</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-unblock">
+                            <span data-region="dialogue-button-text">Odblokuj</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-remove-contact">
+                            <span data-region="dialogue-button-text">Usuń</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-add-contact">
+                            <span data-region="dialogue-button-text">Dodaj</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-selected-messages">
+                            <span data-region="dialogue-button-text">Usuń</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-conversation">
+                            <span data-region="dialogue-button-text">Usuń</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="request-add-contact">
+                            <span data-region="dialogue-button-text">Wyślij prośbę o kontakt</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="accept-contact-request">
+                            <span data-region="dialogue-button-text">Zaakceptuj i dodaj do kontaktów</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-block hidden" data-action="decline-contact-request">
+                            <span data-region="dialogue-button-text">Odmów</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-block" data-action="cancel-confirm">Anuluj</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 pt-0" data-region="content-placeholder">
+                    <div class="h-100 d-flex flex-column">
+                        <div
+                            class="px-2 pb-2 pt-0 bg-light h-100"
+                            style="overflow-y: auto"
+                        >
+                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                        </div>
+                    </div>                </div>
+            </div>
+        </div>
+        
+        <div
+            class="hidden"
+            aria-hidden="true"
+            data-region="view-group-info"
+        >
+            <div
+                class="pt-3 h-100 d-flex flex-column"
+                data-region="group-info-content-container"
+                style="overflow-y: auto"
+            ></div>
+        </div>        <div class="h-100 view-overview-body" aria-hidden="false" data-region="view-overview" data-user-id="320">
+            <div id="message-drawer-view-overview-container" class="d-flex flex-column h-100" style="overflow-y: auto">
+                    
+                    <div
+                        class="accordion-group section border-0 "
+                        data-region="view-overview-favourites"
+                    >
+                        <div id="view-overview-favourites-toggle" class="accordion-heading" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 m-0 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-parent="#message-drawer-view-overview-container"
+                                data-target="#view-overview-favourites-target"
+                                aria-expanded="false"
+                                aria-controls="view-overview-favourites-target"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed" />
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/expanded" />
+                                </span>
+                                <strong>Oznaczone gwiazdką</strong>
+                                <small class="hidden ml-1" data-region="section-total-count-container"
+                                aria-label=" wszystkich rozmów">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                data-region="section-unread-count"
+                                >
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class=" accordion-body collapse border-bottom "
+                        style="overflow-y: auto"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="320"
+                                    id="view-overview-favourites-target"
+            aria-labelledby="view-overview-favourites-toggle"
+            data-parent="#message-drawer-view-overview-container"
+
+                    >
+                        <div class="onepix">
+                        </div>
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Brak rozmów oznaczonych gwiazdką</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div
+                        class="accordion-group section border-0 "
+                        data-region="view-overview-group-messages"
+                    >
+                        <div id="view-overview-group-messages-toggle" class="accordion-heading" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 m-0 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-parent="#message-drawer-view-overview-container"
+                                data-target="#view-overview-group-messages-target"
+                                aria-expanded="false"
+                                aria-controls="view-overview-group-messages-target"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed" />
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/expanded" />
+                                </span>
+                                <strong>Grupowe</strong>
+                                <small class="hidden ml-1" data-region="section-total-count-container"
+                                aria-label=" wszystkich rozmów">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                data-region="section-unread-count"
+                                >
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class=" accordion-body collapse border-bottom "
+                        style="overflow-y: auto"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="320"
+                                    id="view-overview-group-messages-target"
+            aria-labelledby="view-overview-group-messages-toggle"
+            data-parent="#message-drawer-view-overview-container"
+
+                    >
+                        <div class="onepix">
+                        </div>
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Brak rozmów grupowych</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div
+                        class="accordion-group section border-0 "
+                        data-region="view-overview-messages"
+                    >
+                        <div id="view-overview-messages-toggle" class="accordion-heading" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 m-0 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-parent="#message-drawer-view-overview-container"
+                                data-target="#view-overview-messages-target"
+                                aria-expanded="false"
+                                aria-controls="view-overview-messages-target"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/collapsed" />
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/t/expanded" />
+                                </span>
+                                <strong>Prywatne</strong>
+                                <small class="hidden ml-1" data-region="section-total-count-container"
+                                aria-label=" wszystkich rozmów">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                data-region="section-unread-count"
+                                >
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class=" accordion-body collapse border-bottom "
+                        style="overflow-y: auto"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="320"
+                                    id="view-overview-messages-target"
+            aria-labelledby="view-overview-messages-toggle"
+            data-parent="#message-drawer-view-overview-container"
+
+                    >
+                        <div class="onepix">
+                        </div>
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Brak rozmów prywatnych</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div
+            data-region="view-search"
+            aria-hidden="true"
+            class="h-100 hidden"
+            data-user-id="320"
+            data-users-offset="0"
+            data-messages-offset="0"
+            style="overflow-y: auto"
+        >
+            <div class="hidden" data-region="search-results-container" style="overflow-y: auto">
+                
+                <div class="d-flex flex-column">
+                    <div class="mb-3 bg-white" data-region="all-contacts-container">
+                        <div data-region="contacts-container"  class="pt-2">
+                            <h4 class="h6 px-2">Kontakty</h4>
+                            <div class="list-group" data-region="list"></div>
+                        </div>
+                        <div data-region="non-contacts-container" class="pt-2 border-top">
+                            <h4 class="h6 px-2">Spoza kontaktów</h4>
+                            <div class="list-group" data-region="list"></div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-link text-primary" data-action="load-more-users">
+                                <span data-region="button-text">Załaduj więcej</span>
+                                <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white" data-region="messages-container">
+                        <h4 class="h6 px-2 pt-2">Wiadomości</h4>
+                        <div class="list-group" data-region="list"></div>
+                        <div class="text-right">
+                            <button class="btn btn-link text-primary" data-action="load-more-messages">
+                                <span data-region="button-text">Załaduj więcej</span>
+                                <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="hidden p-3 text-center" data-region="no-results-container">Brak wyników</p>
+                </div>            </div>
+            <div class="hidden" data-region="loading-placeholder">
+                <div class="text-center pt-3 icon-size-4"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</div>
+            </div>
+            <div class="p-3 text-center" data-region="empty-message-container">
+                <p>Szukaj osób i wiadomości</p>
+            </div>
+        </div>        
+        <div class="h-100 hidden bg-white" aria-hidden="true" data-region="view-settings">
+            <div class="hidden" data-region="content-container">
+                
+                <div data-region="settings" class="p-3">
+                    <h3 class="h6 font-weight-bold">Prywatność</h3>
+                    <p>Zdecyduj, kto może wysyłać Ci wiadomości</p>
+                    <div data-preference="blocknoncontacts" class="mb-3">
+                            <div class="custom-control custom-radio mb-2">
+                                <input
+                                    type="radio"
+                                    name="message_blocknoncontacts"
+                                    class="custom-control-input"
+                                    id="block-noncontacts-5ee4e2700fe425ee4e26fe995434-1"
+                                    value="1"
+                                >
+                                <label class="custom-control-label ml-2" for="block-noncontacts-5ee4e2700fe425ee4e26fe995434-1">
+                                    Tylko moje kontakty
+                                </label>
+                            </div>
+                            <div class="custom-control custom-radio mb-2">
+                                <input
+                                    type="radio"
+                                    name="message_blocknoncontacts"
+                                    class="custom-control-input"
+                                    id="block-noncontacts-5ee4e2700fe425ee4e26fe995434-0"
+                                    value="0"
+                                >
+                                <label class="custom-control-label ml-2" for="block-noncontacts-5ee4e2700fe425ee4e26fe995434-0">
+                                    Moje kontakty i każdy, kto uczestniczy w moich kursach
+                                </label>
+                            </div>
+                    </div>
+                
+                    <div class="hidden" data-region="notification-preference-container">
+                        <h3 class="mb-2 mt-4 h6 font-weight-bold">Preferencje powiadomień</h3>
+                    </div>
+                
+                    <h3 class="mb-2 mt-4 h6 font-weight-bold">Ogólne</h3>
+                    <div data-preference="entertosend">
+                        <span class="switch">
+                            <input type="checkbox"
+                                id="enter-to-send-5ee4e2700fe425ee4e26fe995434"
+                                
+                            >
+                            <label for="enter-to-send-5ee4e2700fe425ee4e26fe995434">
+                                Wciśnij Enter aby wysłać
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div data-region="placeholder-container">
+                
+                <div class="d-flex flex-column p-3">
+                    <div class="w-25 bg-pulse-grey h6" style="height: 18px"></div>
+                    <div class="w-75 bg-pulse-grey mb-4" style="height: 18px"></div>
+                    <div class="mb-3">
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                    <div class="w-50 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                    <div class="mb-4">
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                    <div class="w-25 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                    <div class="mb-3">
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                </div>            </div>
+        </div>    </div>
+    <div class="footer-container position-relative" data-region="footer-container">
+        
+        <div
+            class="hidden border-top bg-white position-relative"
+            aria-hidden="true"
+            data-region="view-conversation"
+            data-enter-to-send="0"
+        >
+            <div class="hidden p-2" data-region="content-messages-footer-container">
+                
+                <div class="d-flex mt-1">
+                    <textarea
+                        dir="auto"
+                        data-region="send-message-txt"
+                        class="form-control bg-light m-0 flex-grow"
+                        rows="3"
+                        data-auto-rows
+                        data-min-rows="3"
+                        data-max-rows="5"
+                        role="textbox"
+                        aria-label="Napisz wiadomość ..."
+                        placeholder="Napisz wiadomość ..."
+                        style="resize: none"
+                    ></textarea>
+                    <button
+                        class="btn btn-link btn-icon icon-size-3 ml-1 mt-auto"
+                        aria-label="Wyślij wiadomość"
+                        data-action="send-message"
+                    >
+                        <span data-region="send-icon-container"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/sendmessage" /></span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden p-2" data-region="content-messages-footer-edit-mode-container">
+                
+                <div class="d-flex p-3">
+                    <button
+                        class="btn btn-link btn-icon my-1 icon-size-4 ml-auto"
+                        data-action="delete-selected-messages"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Usuń zaznaczoną wiadomość"
+                    >
+                        <span data-region="icon-container"><img class="icon " alt="" aria-hidden="true" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/trash" /></span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                        <span class="sr-only">Usuń zaznaczoną wiadomość</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-require-contact-container">
+                
+                <div class="p-3 bg-white">
+                    <p data-region="title"></p>
+                    <p class="text-muted" data-region="text"></p>
+                    <button type="button" class="btn btn-primary btn-block" data-action="request-add-contact">
+                        <span data-region="dialogue-button-text">Wyślij prośbę o kontakt</span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-require-unblock-container">
+                
+                <div class="p-3 bg-white">
+                    <p class="text-muted" data-region="text">Zablokowałeś tego użytkownika</p>
+                    <button type="button" class="btn btn-primary btn-block" data-action="request-unblock">
+                        <span data-region="dialogue-button-text">Odblokuj użytkownika</span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="Ładowanie" title="Ładowanie" src="https://skos.ii.uni.wroc.pl/theme/image.php/elegance/core/1570042091/i/loading" /></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-unable-to-message">
+                
+                <div class="p-3 bg-white">
+                    <p class="text-muted" data-region="text">Nie możesz wysłać wiadomości do tego użytkownika</p>
+                </div>
+            </div>
+            <div class="p-2" data-region="placeholder-container">
+                <div class="d-flex">
+                    <div class="bg-pulse-grey w-100" style="height: 80px"></div>
+                    <div class="mx-2 mb-2 align-self-end bg-pulse-grey" style="height: 20px; width: 20px"></div>
+                </div>            </div>
+            <div
+                class="hidden position-absolute"
+                data-region="confirm-dialogue-container"
+                style="top: -1px; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+            ></div>
+        </div>    </div>
+</div>
+<footer id="page-footer" >
+    <div class="page-footer-inner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="footnote">Serwer SKOS:<br>
+
+<a href="https://michalis.ii.uni.wroc.pl/~michalis/skos_news.php">Nowości i zmiany</a><br>
+
+<a href="https://michalis.ii.uni.wroc.pl/~michalis/skos_docs.php">Dokumentacja</a><br>
+
+<a href="mailto:michalis.kambi%20AT%20gmail.com">Kontakt do admina</a></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-right m-b-10">
+                                                <div class="logininfo">Jesteś zalogowany(a) jako <a href="https://skos.ii.uni.wroc.pl/user/profile.php?id=320" title="Zobacz profil">Martyna Siejba</a> (<a href="https://skos.ii.uni.wroc.pl/login/logout.php?sesskey=HrffLMbrWL">Wyloguj</a>)</div>                    </div>
+                                    </div>
+                <script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://skos.ii.uni.wroc.pl/lib/requirejs.php/1570042091/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://skos.ii.uni.wroc.pl/lib/javascript.php/1570042091/lib/jquery/jquery-3.2.1.min',
+        jqueryui: 'https://skos.ii.uni.wroc.pl/lib/javascript.php/1570042091/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://skos.ii.uni.wroc.pl/lib/javascript.php/1570042091/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="https://skos.ii.uni.wroc.pl/lib/javascript.php/1570042091/lib/requirejs/require.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.util.js_pending("core/first");require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://skos.ii.uni.wroc.pl/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("pl",{
+ "Play": "Odtwarzaj",
+ "Pause": "Pauza",
+ "Current Time": "Aktualny czas",
+ "Duration Time": "Czas trwania",
+ "Remaining Time": "Pozostały czas",
+ "Stream Type": "Typ strumienia",
+ "LIVE": "NA ŻYWO",
+ "Loaded": "Załadowany",
+ "Progress": "Status",
+ "Fullscreen": "Pełny ekran",
+ "Non-Fullscreen": "Pełny ekran niedostępny",
+ "Mute": "Wyłącz dźwięk",
+ "Unmute": "Włącz dźwięk",
+ "Playback Rate": "Szybkość odtwarzania",
+ "Subtitles": "Napisy",
+ "subtitles off": "Napisy wyłączone",
+ "Captions": "Transkrypcja",
+ "captions off": "Transkrypcja wyłączona",
+ "Chapters": "Rozdziały",
+ "You aborted the media playback": "Odtwarzanie zostało przerwane",
+ "A network error caused the media download to fail part-way.": "Problemy z siecią spowodowały błąd przy pobieraniu materiału wideo.",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "Materiał wideo nie może być załadowany, ponieważ wystąpił problem z siecią lub format nie jest obsługiwany",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "Odtwarzanie materiału wideo zostało przerwane z powodu uszkodzonego pliku wideo lub z powodu błędu funkcji, które nie są wspierane przez przeglądarkę.",
+ "No compatible source was found for this media.": "Dla tego materiału wideo nie znaleziono kompatybilnego źródła.",
+ "Play video": "Odtwarzaj wideo",
+ "Close": "Zamknij",
+ "Modal Window": "Okno Modala",
+ "This is a modal window": "To jest okno modala",
+ "This modal can be closed by pressing the Escape key or activating the close button.": "Ten modal możesz zamknąć naciskając przycisk Escape albo wybierając przycisk Zamknij.",
+ ", opens captions settings dialog": ", otwiera okno dialogowe ustawień transkrypcji",
+ ", opens subtitles settings dialog": ", otwiera okno dialogowe napisów",
+ ", selected": ", zaznaczone"
+});
+
+    });
+});;
+
+require(
+[
+    'jquery',
+    'block_timeline/main',
+],
+function(
+    $,
+    Main
+) {
+    var root = $('#block-timeline-5ee4e26fe99515ee4e26fe99541');
+    Main.init(root);
+});
+;
+M.util.js_pending('block_online_users/change_user_visibility');
+require(['block_online_users/change_user_visibility'], function(amd) {
+    amd.init();
+    M.util.js_complete('block_online_users/change_user_visibility');
+});;
+
+require(['jquery', 'theme_bootstrapbase/bootstrap'], function($) {
+    require(['theme_bootstrapbase/bootstrap'], function() {
+        var target = $("#calendar-day-popover-link-1-2020-164-5ee4e26ff0cab5ee4e26fe99542");
+        target.popover({
+            content: function() {
+                var source = target.next().find("> *:not('.hidden')");
+                var content = $('<div>');
+
+                if (source.length) {
+                    content.html(source.clone(false));
+                } else {
+                    content.html(target.data('alternate'));
+                }
+
+                return content.html();
+            }
+        });
+    });
+});
+;
+
+require([
+    'jquery',
+    'core_calendar/selectors',
+    'core_calendar/events',
+], function(
+    $,
+    CalendarSelectors,
+    CalendarEvents
+) {
+
+    $('body').on(CalendarEvents.filterChanged, function(e, data) {
+        M.util.js_pending("month-mini-5ee4e26ff0cab5ee4e26fe99542-filterChanged");
+        // A filter value has been changed.
+        // Find all matching cells in the popover data, and hide them.
+        $("#month-mini-2020-June-5ee4e26ff0cab5ee4e26fe99542")
+            .find(CalendarSelectors.popoverType[data.type])
+            .toggleClass('hidden', !!data.hidden);
+        M.util.js_complete("month-mini-5ee4e26ff0cab5ee4e26fe99542-filterChanged");
+    });
+});
+;
+
+require(['jquery', 'core_calendar/calendar_mini'], function($, CalendarMini) {
+    CalendarMini.init($("#calendar-month-2020-June-5ee4e26ff0cab5ee4e26fe99542"), !0);
+});
+;
+
+require([
+    'jquery',
+    'core_calendar/selectors',
+    'core_calendar/events',
+], function(
+    $,
+    CalendarSelectors,
+    CalendarEvents
+) {
+    var root = $('#month-upcoming-mini-5ee4e2700680d5ee4e26fe99543');
+
+    $('body').on(CalendarEvents.filterChanged, function(e, data) {
+        M.util.js_pending("month-upcoming-mini-5ee4e2700680d5ee4e26fe99543-filterChanged");
+
+        // A filter value has been changed.
+        // Find all matching cells in the popover data, and hide them.
+        var target = $("#month-upcoming-mini-5ee4e2700680d5ee4e26fe99543").find(CalendarSelectors.eventType[data.type]);
+
+        var transitionPromise = $.Deferred();
+        if (data.hidden) {
+            transitionPromise.then(function() {
+                return target.slideUp('fast').promise();
+            });
+        } else {
+            transitionPromise.then(function() {
+                return target.slideDown('fast').promise();
+            });
+        }
+
+        transitionPromise.then(function() {
+            M.util.js_complete("month-upcoming-mini-5ee4e2700680d5ee4e26fe99543-filterChanged");
+
+            return;
+        });
+
+        transitionPromise.resolve();
+    });
+});
+;
+
+require(['jquery', 'core_calendar/calendar_view'], function($, CalendarView) {
+    CalendarView.init($("#calendar-upcoming-block-5ee4e2700680d5ee4e26fe99543"), 'upcoming');
+});
+;
+M.util.js_pending('block_navigation/navblock');
+require(['block_navigation/navblock'], function(amd) {
+    amd.init("4");
+    M.util.js_complete('block_navigation/navblock');
+});;
+M.util.js_pending('tool_usertours/usertours');
+require(['tool_usertours/usertours'], function(amd) {
+    amd.init("4", true, 3472);
+    M.util.js_complete('tool_usertours/usertours');
+});;
+M.util.js_pending('block_settings/settingsblock');
+require(['block_settings/settingsblock'], function(amd) {
+    amd.init("5", null);
+    M.util.js_complete('block_settings/settingsblock');
+});;
+
+require(
+[
+    'jquery',
+    'block_recentlyaccessedcourses/main'
+],
+function(
+    $,
+    Main
+) {
+    var root = $('#block-recentlyaccessedcourses-5ee4e2700c2f85ee4e26fe995414');
+    var userid = root.attr('data-userid');
+
+    Main.init(userid, root);
+});
+;
+
+require(
+[
+    'jquery',
+    'block_myoverview/main',
+],
+function(
+    $,
+    Main
+) {
+    var root = $('#block-myoverview-5ee4e2700c7a75ee4e26fe995415');
+    Main.init(root);
+});
+;
+
+require(['core/yui'], function(Y) {
+    M.util.init_skiplink(Y);
+});
+;
+
+require(['core/yui'], function(Y) {
+    Y.use('moodle-core-actionmenu', function() {
+        M.core.actionmenu.init();
+    });
+});
+;
+
+require(['jquery'], function($) {
+    $('#single_select5ee4e26fe995425').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5ee4e26fe995424').submit();
+        }
+    });
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_popover'
+],
+function(
+    $,
+    Popover
+) {
+    var toggle = $('#message-drawer-toggle-5ee4e2700f1a65ee4e26fe995426');
+    Popover.init(toggle);
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_drawer',
+    'core_message/message_popover',
+    'theme_bootstrapbase/bootstrap'
+],
+function(
+    $,
+    MessageDrawer,
+    Popover,
+    _
+) {
+
+    var root = $('#message-drawer-5ee4e2700fe425ee4e26fe995434');
+    MessageDrawer.init(root);
+    root.affix({
+        offset: {
+            top: 52
+        }
+    });
+
+    var toggle = $('#message-drawer-close-5ee4e2700fe425ee4e26fe995434');
+    Popover.init(toggle);
+});
+;
+M.util.js_pending('core/notification');
+require(['core/notification'], function(amd) {
+    amd.init(3472, []);
+    M.util.js_complete('core/notification');
+});;
+M.util.js_pending('core/log');
+require(['core/log'], function(amd) {
+    amd.setConfig({"level":"warn"});
+    M.util.js_complete('core/log');
+});;
+M.util.js_pending('core/page_global');
+require(['core/page_global'], function(amd) {
+    amd.init();
+    M.util.js_complete('core/page_global');
+});M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script type="text/javascript" src="https://skos.ii.uni.wroc.pl/theme/javascript.php/elegance/1570042091/footer"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Ostatnia modyfikacja","name":"Nazwa","error":"B\u0142\u0105d","info":"Informacja","yes":"Tak","no":"Nie","viewallcourses":"Zobacz wszystkie kursy","cancel":"Anuluj","morehelp":"Wi\u0119cej pomocy","loadinghelp":"\u0141adowanie ...","confirm":"Potwierd\u017a","areyousure":"Jeste\u015b pewien?","closebuttontitle":"Zamknij","unknownerror":"Nieznany b\u0142\u0105d"},"repository":{"type":"Typ","size":"Rozmiar","invalidjson":"Nieprawid\u0142owy ci\u0105g jSON","nofilesattached":"Nie za\u0142\u0105czono plik\u00f3w","filepicker":"Wyb\u00f3r plik\u00f3w","logout":"Wyloguj si\u0119","nofilesavailable":"Brak dost\u0119pnych plik\u00f3w","norepositoriesavailable":"Niestety, \u017cadne z istniej\u0105cych repozytori\u00f3w nie mo\u017ce zawiera\u0107 plik\u00f3w w wymaganym formacie.","fileexistsdialogheader":"Plik istnieje","fileexistsdialog_editor":"Plik o wybranej nazwie zosta\u0142 ju\u017c za\u0142\u0105czony do tekstu, kt\u00f3ry edytujesz.","fileexistsdialog_filemanager":"Plik o wybranej nazwie ju\u017c zosta\u0142 do\u0142\u0105czony","renameto":"Zmie\u0144 nazw\u0119 na","referencesexist":"Istnieje {$a} skr\u00f3t\u00f3w, kt\u00f3re wykorzystuj\u0105 ten plik jako \u017ar\u00f3d\u0142o.","select":"Wybierz"},"admin":{"confirmdeletecomments":"Zamierzasz usun\u0105\u0107 komentarze, czy jeste\u015b pewien(a)?","confirmation":"Potwierdzenie"},"block":{"addtodock":"Zadokuj","undockitem":"Od\u0142\u0105cz t\u0105 pozycj\u0119","dockblock":"Zadokuj blok {$a}","undockblock":"Od\u0142\u0105cz blok {$a}","undockall":"Od\u0142\u0105cz wszystkie","hidedockpanel":"Ukryj panel dokowania","hidepanel":"Ukryj panel"},"langconfig":{"thisdirectionvertical":"btt"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-core-dock-loader",function() {M.core.dock.loader.initLoader();
+});
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"pl"});
+});
+M.util.help_popups.setup(Y);
+Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
+});
+M.util.init_block_hider(Y, {"id":"inst3127","title":"Moje prywatne pliki","preference":"block3127hidden","tooltipVisible":"Ukryj blok Moje prywatne pliki","tooltipHidden":"Poka\u017c blok Moje prywatne pliki"});
+M.util.init_block_hider(Y, {"id":"inst9925","title":"O\u015b czasu","preference":"block9925hidden","tooltipVisible":"Ukryj blok O\u015b czasu","tooltipHidden":"Poka\u017c blok O\u015b czasu"});
+M.util.init_block_hider(Y, {"id":"inst3128","title":"U\u017cytkownicy online","preference":"block3128hidden","tooltipVisible":"Ukryj blok U\u017cytkownicy online","tooltipHidden":"Poka\u017c blok U\u017cytkownicy online"});
+M.util.init_block_hider(Y, {"id":"inst3129","title":"Ostatnie odznaki","preference":"block3129hidden","tooltipVisible":"Ukryj blok Ostatnie odznaki","tooltipHidden":"Poka\u017c blok Ostatnie odznaki"});
+M.util.init_block_hider(Y, {"id":"inst3130","title":"Kalendarz","preference":"block3130hidden","tooltipVisible":"Ukryj blok Kalendarz","tooltipHidden":"Poka\u017c blok Kalendarz"});
+M.util.init_block_hider(Y, {"id":"inst3131","title":"Nadchodz\u0105ce wydarzenia","preference":"block3131hidden","tooltipVisible":"Ukryj blok Nadchodz\u0105ce wydarzenia","tooltipHidden":"Poka\u017c blok Nadchodz\u0105ce wydarzenia"});
+M.util.init_block_hider(Y, {"id":"inst4","title":"Nawigacja","preference":"block4hidden","tooltipVisible":"Ukryj blok Nawigacja","tooltipHidden":"Poka\u017c blok Nawigacja"});
+M.util.init_block_hider(Y, {"id":"inst8736","title":"Ostatnio przegl\u0105dane kursy","preference":"block8736hidden","tooltipVisible":"Ukryj blok Ostatnio przegl\u0105dane kursy","tooltipHidden":"Poka\u017c blok Ostatnio przegl\u0105dane kursy"});
+M.util.init_block_hider(Y, {"id":"inst3133","title":"Przegl\u0105d kurs\u00f3w","preference":"block3133hidden","tooltipVisible":"Ukryj blok Przegl\u0105d kurs\u00f3w","tooltipHidden":"Poka\u017c blok Przegl\u0105d kurs\u00f3w"});
+ M.util.js_pending('random5ee4e26fe995437'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5ee4e26fe995437'); });
+})();
+//]]>
+</script>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="tool_dataprivacy"><a href="https://skos.ii.uni.wroc.pl/admin/tool/dataprivacy/summary.php">Podsumowanie zasad przechowywania danych</a></div><a href="https://download.moodle.org/mobile?version=2018120306.03&amp;lang=pl&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">Pobierz aplikację mobilną</a>    </div>
+
+</footer>
+
+<script>
+
+</script>
+
+
+ <a href="#top" class="back-to-top"><i class="fa fa-angle-up "></i></a>
+</body>
+</html>
