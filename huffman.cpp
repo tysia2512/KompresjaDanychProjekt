@@ -91,13 +91,6 @@ public:
                 max_freq = it->second;
         }
     }
-
-    void debug() {
-        std::cout << "DISTRIBUTION DEBUG\n";
-        for (int i = 0; i < distr.size(); i++) {
-            std::cout << distr[i].get<0>() << " " << distr[i].get<1>() << "\n";
-        }
-    }
 };
 
 class CombinedLettersDistribution : public Distribution {
@@ -207,9 +200,12 @@ public:
                 length += k;
             }
         }
-        std::cout << "Liczba kodów liter: " << letter_codes.size() << "\n";
         double estimated_length = length * log2(letter_codes.size());
         return boost::make_tuple(code, (long long)estimated_length);
+    }
+
+    int size() {
+        return letter_codes.size();
     }
 };
 

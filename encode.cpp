@@ -16,7 +16,7 @@ CODE encode(const std::string& filename, int k, bool cmb, bool eo) {
 
 int main(int argc, char *argv[]) {
     if (argc == 1) {
-        std::cout << "Nalezy podac parametry\n";
+        std::cout << "Należy podać parametry\n";
     } else {
         std::string filename = argv[1];
         int k = 1;
@@ -32,5 +32,6 @@ int main(int argc, char *argv[]) {
             eo = atoi(argv[4]);
         }
         std::cout << encode(filename, k, cmb, eo);
+        std::cout << "\n";
     }
 }
