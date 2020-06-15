@@ -190,7 +190,7 @@ public:
 
     boost::tuple<CODE, long long> encode(DATA& data) const {
         long long length = 0;
-        CODE code = "";
+        CODE code;
         while (!data.eof()) {
             LETTER l = "";
             for (int i = 0; i < k; i++) {
@@ -201,7 +201,9 @@ public:
                 }
             }
             if (l.size() == k) {
-                code += letter_codes.find(l)->second;
+                for (int i = 0; i < letter_codes.find(l)->second.size(); i++) {
+                    code.push_back(letter_codes.find(l)->second[i]);
+                }
                 length += k;
             }
         }

@@ -33,7 +33,7 @@ public:
             data.open(file);
             boost::tuple<CODE, long long> encoded = hc.encode(data);
 
-            long long encoded_l = encoded.get<0>().length();
+            long long encoded_l = encoded.get<0>().size();
             long long estimated_original_l = encoded.get<1>();
             std::cout << "Długość zakodowanego tekstu: " << encoded_l << "\nSzacowana długość oryginału: " << estimated_original_l << "\n";
             double ratio = (double)encoded_l / (double)estimated_original_l;
