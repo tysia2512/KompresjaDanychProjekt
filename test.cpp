@@ -17,7 +17,7 @@ public:
 
     void run() const {
         for (int k = 1; k <= maxk; k++) {
-            const std::string file = filename;
+            const std::string file = "testy/" + filename;
             if (k == 1 && combine == true) {
                 continue;
             }

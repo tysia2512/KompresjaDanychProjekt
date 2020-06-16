@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
         if (argc >= 4) {
             eo = atoi(argv[4]);
         }
-        std::cout << encode(filename, k, cmb, eo);
+        std::cout << encode("testy/" + filename, k, cmb, eo);
         std::cout << "\n";
     }
 }
